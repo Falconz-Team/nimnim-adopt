@@ -2,7 +2,7 @@
 
 ## Falcon Team:
 
-1. Saleh Abu Radwan (Team leader).
+1. Saleh Abu Radwan.
 1. Mohammad Noor
 1. Miral Al-Abduallah
 1. Samer Odeh.
