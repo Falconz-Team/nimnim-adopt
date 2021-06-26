@@ -1,20 +1,28 @@
 import React, { Component } from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, Col, Row, Container } from 'react-bootstrap';
 
 export class MainButtons extends Component {
-    render() {
-        return (
-            <div>
-                <>
-                    <Button href="#">Link</Button> <Button type="submit">Show Pets</Button>{' '}
-                    <Button as="input" type="button" value="Input" />{' '}
-                    <Button as="input" type="submit" value="Submit" />{' '}
-                    <Button as="input" type="reset" value="Reset" />
-                </>
-
-            </div>
-        )
-    }
+	render() {
+		return (
+			<>
+				<Container>
+					<Row className="justify-content-md-center">
+						<Col xs lg="auto">
+							<Button href="#">Show Pets</Button>
+						</Col>
+						<Col>
+							<Button type="submit">Add Pets</Button>
+						</Col>
+					</Row>
+					<Row className="justify-content-md-center">
+						<Col md={{ span: 2, offset: 2 }}>
+							<Button type="submit">Sign Up</Button>
+						</Col>
+					</Row>
+				</Container>
+			</>
+		)
+	}
 }
 
 export default MainButtons
