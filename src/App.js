@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-//import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header';
 import Main from './components/Main';
@@ -15,6 +14,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Dogs from './components/Dogs';
 import Birds from './components/Birds';
 import Other from './components/Other';
+
 
 export class App extends Component {
   render() {
