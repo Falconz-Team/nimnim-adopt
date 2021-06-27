@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-export class CarePage extends Component {
+export class cats extends Component {
   render() {
     return (
       <div>
-				
+        
       </div>
     );
   }
 }
 
-export default CarePage;
+export default cats;
