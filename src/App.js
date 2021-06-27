@@ -1,26 +1,49 @@
+import React, { Component } from 'react';
 //import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header';
 import Main from './components/Main';
 import Footer from './components/Footer';
-// import './carousel.css';
+import ShowPets from './components/ShowPets';
+import AddPets from './components/AddPets';
+import ShowCategory from './components/ShowCategory';
+import CarePage from './components/CarePage';
+import AboutUs from './components/AboutUs';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-
-function App() {
-	return (
-		<div>
-			<Header />
-			<Main />
-			<Footer />
-{/* 
-			style={{
-			backgroundImage: `url("https://images.unsplash.com/photo-1506993708131-b0bf29d16b76?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80")`,
-			height: '1000px',
-			width: '100%'
-		}} */}
-
-		</div>
-	);
+export class App extends Component {
+  render() {
+    return (
+      <div>
+        <Router>
+          <Header />
+          <Switch>
+            <Route path="/" exact>
+              <Main />
+            </Route>
+            <Route path="/ShowPets">
+              <ShowPets />
+            </Route>
+            <Route path="/AddPets">
+              <AddPets />
+            </Route>
+            <Route path="/ShowCategory">
+              <ShowCategory />
+            </Route>
+            <Route path="/CarePage">
+              <CarePage />
+            </Route>
+            <Route path="/AboutUs">
+              <AboutUs />
+            </Route>
+          </Switch>
+          <Footer />
+        </Router>
+      </div>
+    );
+  }
 }
 
 export default App;
+
+
