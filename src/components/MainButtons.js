@@ -1,20 +1,23 @@
 import React, { Component } from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, Col, Row, Container, ToggleButtonGroup, ToggleButton } from 'react-bootstrap';
 
 export class MainButtons extends Component {
-    render() {
-        return (
-            <div>
-                <>
-                    <Button href="#">Link</Button> <Button type="submit">Show Pets</Button>{' '}
-                    <Button as="input" type="button" value="Input" />{' '}
-                    <Button as="input" type="submit" value="Submit" />{' '}
-                    <Button as="input" type="reset" value="Reset" />
-                </>
+  render() {
+    return (
+      <>
+        <Container>
+          <Row className="justify-content-md-center">
+            <ToggleButtonGroup type="checkbox" >
+              <ToggleButton value={1}>Show Pets</ToggleButton>
+              <ToggleButton value={2}>Add Pets</ToggleButton>
+              <ToggleButton value={3}>Sign Up</ToggleButton>
+            </ToggleButtonGroup>
 
-            </div>
-        )
-    }
+          </Row>
+        </Container>
+      </>
+    );
+  }
 }
 
-export default MainButtons
+export default MainButtons;
