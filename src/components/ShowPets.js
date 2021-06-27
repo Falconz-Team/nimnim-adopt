@@ -1,13 +1,25 @@
-import React, { Component } from 'react';
-
-export class ShowPets extends Component {
+const React = require('react');
+class Upload extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      file: null,
+    };
+    this.handleChange = this.handleChange.bind(this);
+  }
+  handleChange(event) {
+    this.setState({
+      file: URL.createObjectURL(event.target.files[0]),
+    });
+  }
   render() {
     return (
       <div>
-
+        <input type="file" onChange={this.handleChange}/>
+        <img src={this.state.file} alt ={'work'}/>
       </div>
     );
   }
 }
 
-export default ShowPets;
+export default Upload;
