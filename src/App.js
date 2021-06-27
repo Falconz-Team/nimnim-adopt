@@ -10,6 +10,8 @@ import ShowCategory from './components/ShowCategory';
 import CarePage from './components/CarePage';
 import AboutUs from './components/AboutUs';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 export class App extends Component {
   render() {
