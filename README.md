@@ -35,3 +35,19 @@ We will assign the frondend part React app of our website to four of our team me
 ## Git Process
 
 We created an organization and a repo within it on github to save our code and added all team members to it so that we can all push our work and do a pull request and merge after the team leader checks that there is no conflict in the branch.
+
+## Wireframe
+
+<img src="assest/homepage.png" alt="home">
+<img src="assest/CATIGORIES.png" alt="category">
+<img src="assest/SHOW PETS.png" alt="show pets">
+<img src="assest/pet description.png" alt="pet">
+<img src="assest/ADD PETS.png" alt="Add">
+<img src="assest/care page.png" alt="care">
+<img src="assest/ubout us.png" alt="About">
+
+## DataBase Diagram
+
+<img src="assest/diagram.png" alt="Schema">
+
+
