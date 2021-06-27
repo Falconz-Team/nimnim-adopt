@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import axios from 'axios';
 import UpdateForm from './UpdateForm';
+import './AddPets.css';
 export class AddPets extends React.Component {
 
 
@@ -26,10 +27,11 @@ export class AddPets extends React.Component {
       NumberPets: 0,
 	  updateIndx :'',
 	  showForm: false,
-	  file: null,
 	  files: null,
+	  updateFlies: null,
     };
     this.handleChange = this.handleChange.bind(this);
+    this.updateHandleChange = this.updateHandleChange.bind(this);
   }
 
   handleChange(event) {
@@ -39,22 +41,14 @@ export class AddPets extends React.Component {
    
   }
 
-  upload = () =>{
-    this.setState({
-      file: this.state.files,
-	  });
-  }
+  
 
 	breed = (breed) => this.setState({ breed });
 	age = (age) => this.setState({ age });
 	gender = (gender) => this.setState({ gender });
 	description = (description) => this.setState({ description });
 
-	image = (imag) => {
-	  this.setState({
-	    image_Url: imag,
-	  });
-	}
+	
 
 
 	updateBreed = (updateBreed) => this.setState({ updateBreed });
@@ -62,12 +56,12 @@ export class AddPets extends React.Component {
 	updateGender = (updateGender) => this.setState({ updateGender });
 	updateDescription = (updateDescription) => this.setState({ updateDescription });
 
-	updateImage_Url = (imag) => {
-	  this.setState({
-	    updateImage_Url: imag,
-	  });
-	}
 
+	updateHandleChange = (e) =>{
+	  this.setState({
+	    updateFlies: URL.createObjectURL(e.target.files[0]),
+		  });
+	}
 	componentDidMount  = () =>{
 	    axios.get(`${this.state.REACT_APP_SERVER_URL}/pet?email=${this.state.userEmail}`).then((response) => {
 	    this.setState({
@@ -121,7 +115,7 @@ export class AddPets extends React.Component {
 	    age: this.state.updateAge,
 	    gender: this.state.updateGender,
 	    description: this.state.updateDescription,
-	    image_Url: this.state.files,
+	    image_Url: this.state.updateFlies,
 	  };
 
 	  axios.put(`${this.state.REACT_APP_SERVER_URL}/pet/${this.state.updateIndx}`, reqBody).then(response => {
@@ -130,6 +124,7 @@ export class AddPets extends React.Component {
 	      creatData: response.data.pets,
 	      NumberPets: response.data.pets.length,
 	      showUpdateModel: false,
+		  showForm: false,
 	    });
 	  }).catch(error =>
 	    alert(error.message),
@@ -159,8 +154,9 @@ export class AddPets extends React.Component {
 
     render() {
 	  return (
-	    <>
-	      <div>
+	    <><div id={'body'}>
+	      <div id ="AddForm">
+		  Submit your request and we will respond as soon as possible
 	        <Form onSubmit={(e) => this.createPets(e)}>
 	          <Form.Group className="mb-3">
 	            <Form.Label>breed</Form.Label>
@@ -181,55 +177,56 @@ export class AddPets extends React.Component {
 	          <Form.Group  >
 	            <Form.Label>select image</Form.Label>
                 <Form.Control type="file" onChange={this.handleChange} />
-	            <Form.Text className="text-muted">
-								We will allow you to add a private picture of your pet when accepting your request
-	            </Form.Text>
 	          </Form.Group>
-	          <Button variant="primary" type="submit">
+	          <Button  type="submit" className="addPets">
 							AddPets
 	          </Button>
 	        </Form>
 	      </div>
-	      <div>
+	      <div id="cardRender">
+			  <div id="card">
 	        {
 	          this.state.NumberPets > 0 &&
 						this.state.creatData.map((value, indx) => {
-						  return <Card style={{ width: '18rem' }}>
+						  return <Card style={{ width: '14rem' }}>
 
 						    <Card.Img variant="top" src={value.image_Url} />
-						    <Card.Body>
-						      <Card.Title>{value.breed}</Card.Title>
+						    <Card.Body className="cardBody">
+						      <Card.Title>breed :{value.breed}</Card.Title>
 						      <Card.Text>
-						        {value.age}
+							  age: {value.age}
 						      </Card.Text>
 						      <Card.Text>
-						        {value.gender}
+						      gender:  {value.gender}
 						      </Card.Text>
 						      <Card.Text>
-						        {value.description}
+							  description : {value.description}
 						      </Card.Text>
 						      <Button variant="primary" onClick={() => this.deletePet(indx)}>delete</Button>
 							  <Button variant="secondary" onClick={() => this.openUpdateForm(indx)}>Update</Button>
-
 						    </Card.Body>
 						  </Card>;
 						})
 
 	        }
+            </div>
+            <div>
+
+			
 	        {this.state.showForm && 
 				<UpdateForm 
-
 				  closeUpdateForm={this.closeUpdateForm} 
 				  updateBreed={this.updateBreed}
 				  updateAge={this.updateAge}
 				  updateGender={this.updateGender} 
 				  updateDescription={this.updateDescription}
-				  updateImage_Url={this.updateImage_Url} 
 				  UpdatePet={this.UpdatePet}
+				  updateHandleChange={this.updateHandleChange}
 				  />
 	        }
-
+            </div>
 	      </div>
+		  </div>
 	    </>
 	  );
     }

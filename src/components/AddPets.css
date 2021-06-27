@@ -1,0 +1,29 @@
+#body{
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 20px;
+font-size: 5mm;
+color: bold;
+height: 78vh;
+margin: 0;
+
+}
+
+#card{
+    display: flex;
+    flex-wrap: wrap;
+    color: rgb(240, 172, 1);
+}
+
+.mb-3{
+margin-left: 10px;
+}
+
+.addPets{
+    text-align: right;
+}
+
+.cardBody{
+    background-color: rgb(3, 62, 65);
+   
+}
