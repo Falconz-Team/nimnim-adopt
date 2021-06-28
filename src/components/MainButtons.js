@@ -1,18 +1,29 @@
 import React, { Component } from 'react';
-import { Button, Col, Row, Container, ToggleButtonGroup, ToggleButton } from 'react-bootstrap';
-
+import { Row, Container } from 'react-bootstrap';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+} from 'react-router-dom';
 export class MainButtons extends Component {
   render() {
     return (
       <>
         <Container>
           <Row className="justify-content-md-center">
-            <ToggleButtonGroup type="checkbox" >
-              <ToggleButton value={1}>Show Pets</ToggleButton>
-              <ToggleButton value={2}>Add Pets</ToggleButton>
-              <ToggleButton value={3}>Sign Up</ToggleButton>
-            </ToggleButtonGroup>
-
+            <div class="btn-group" role="group" aria-label="Basic example">
+              <div>
+                <Link to="/Addpets">
+                  <button type="button" class="btn-pets">ADD PETS</button>
+                </Link>
+              </div>
+              <div>
+                <Link to="/ShowCategory">
+                  <button type="button" class="btn-pets">SHOW PETS</button>
+                </Link>
+              </div>
+            </div>
           </Row>
         </Container>
       </>
@@ -21,3 +32,4 @@ export class MainButtons extends Component {
 }
 
 export default MainButtons;
+
