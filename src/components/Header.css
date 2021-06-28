@@ -2,8 +2,10 @@
 	background-color: transparent;
 }
 
-
-
+.logo {
+	position: relative;
+	left: 0%;
+}
 .position {
 	position: absolute;
 	z-index: 100;

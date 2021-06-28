@@ -6,7 +6,6 @@ import {
   Route,
   Link,
 } from 'react-router-dom';
-
 export class MainButtons extends Component {
   render() {
     return (
@@ -15,12 +14,14 @@ export class MainButtons extends Component {
           <Row className="justify-content-md-center">
             <div class="btn-group" role="group" aria-label="Basic example">
               <div>
-                <Link to="/AddPets">
-                  <button type="button" class="btn btn-secondary shadow p-2 mb-4 mr-1 btn-lg">ADD PETS</button> </Link>
+                <Link to="/Addpets">
+                  <button type="button" class="btn-pets">ADD PETS</button>
+                </Link>
               </div>
               <div>
                 <Link to="/ShowCategory">
-                  <button type="button" class="btn btn-secondary shadow p-2 mb-4  ml-1 btn-lg color-btn">SHOW PETS</button> </Link>
+                  <button type="button" class="btn-pets">SHOW PETS</button>
+                </Link>
               </div>
             </div>
           </Row>

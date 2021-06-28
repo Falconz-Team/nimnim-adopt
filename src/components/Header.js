@@ -9,7 +9,7 @@ export class Header extends React.Component {
         <Container className="position">
           <header className='header-color'>
             <Row>
-              <Col>
+              <Col className="logo">
 			  <a href="/"> 
 			  <img src="https://i.pinimg.com/originals/51/77/2b/51772b49f5446c03100df6d6d61b55e2.png" width="60" height="60" alt="logo" />
 			  </a>
