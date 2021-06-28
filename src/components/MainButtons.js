@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Col, Row, Container, ToggleButtonGroup, ToggleButton } from 'react-bootstrap';
+import {  Row, Container, ToggleButtonGroup, ToggleButton } from 'react-bootstrap';
 
 export class MainButtons extends Component {
   render() {
@@ -7,12 +7,14 @@ export class MainButtons extends Component {
       <>
         <Container>
           <Row className="justify-content-md-center">
-            <ToggleButtonGroup type="checkbox" >
-              <ToggleButton value={1}>Show Pets</ToggleButton>
-              <ToggleButton value={2}>Add Pets</ToggleButton>
-              <ToggleButton value={3}>Sign Up</ToggleButton>
-            </ToggleButtonGroup>
-
+            <div class="btn-group" role="group" aria-label="Basic example">
+              <div>
+                <button type="button" class="btn btn-secondary shadow p-2 mb-4 mr-1 btn-lg">ADD PETS</button>
+              </div>
+              <div>
+                <button type="button" class="btn btn-secondary shadow p-2 mb-4  ml-1 btn-lg color-btn">SHOW PETS</button>
+              </div>
+            </div>
           </Row>
         </Container>
       </>
@@ -21,3 +23,4 @@ export class MainButtons extends Component {
 }
 
 export default MainButtons;
+

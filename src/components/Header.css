@@ -1,0 +1,28 @@
+.header-color{
+	background-color: transparent;
+}
+
+
+
+.position {
+	position: absolute;
+	z-index: 100;
+	bottom: 620px;
+	left: 200px
+}
+
+.font-color{
+	color: black;
+}
+.text-my-own-color {
+	color: rgb(255, 235, 205) !important; 
+	text-shadow: 1px 1px 1px #ccc0c86c;
+}
+
+.text-my-own-color:hover, .text-my-own-color:active {
+	color:#5f7583 !important;
+}
+.bg-color {
+	  color: red;
+	  
+}
