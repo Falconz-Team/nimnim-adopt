@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Carousel from 'react-bootstrap/Carousel';
 import MainButtons from './MainButtons';
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
 
 
 export class ShowCategory extends Component {
@@ -10,7 +10,7 @@ export class ShowCategory extends Component {
 
     return (
       <div>
-        <Button href="/ShowPets">Show Pets</Button>{' '} 
+        {/* <Button href="/ShowPets">Show Pets</Button>{' '}  */}
 				 <Carousel fade={true} controls={false}>
           <Carousel.Item interval={1000}>
             <a href="/cats"><img

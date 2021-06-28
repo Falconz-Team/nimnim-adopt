@@ -10,8 +10,8 @@ export class Main extends React.Component {
   render() {
     return (
       <>
-	  <div>
-		 
+        <div>
+
           <Carousel fade={true} controls={false} className="carousel-position">
             <Carousel.Item interval={1000}>
               <img
@@ -20,11 +20,11 @@ export class Main extends React.Component {
                 alt="First slide"
               />
               <Carousel.Caption className="caption-margin">
-				  <div>
+                <div>
                   <h1 className='font-family'>Nimnim</h1>
                   <p className="for-adoption-position">For Adoption</p>
                   <p className="margin-top">"Find Me A Home, Find Me A Family"</p>
-				  </div>	  
+                </div>
                 <div>
                   <MainButtons />
                 </div>
@@ -37,11 +37,11 @@ export class Main extends React.Component {
                 alt="Second slide"
               />
               <Carousel.Caption className="caption-margin">
-			  <div>
+                <div>
                   <h1 className='font-family'>Nimnim</h1>
                   <p className="for-adoption-position">For Adoption</p>
                   <p className="margin-top">"Find Me A Home, Find Me A Family"</p>
-				  </div>
+                </div>
                 <div>
                   <MainButtons />
                 </div>
@@ -54,11 +54,11 @@ export class Main extends React.Component {
                 alt="Third slide"
               />
               <Carousel.Caption className="caption-margin">
-			  <div>
+                <div>
                   <h1 className='font-family'>Nimnim</h1>
                   <p className="for-adoption-position">For Adoption</p>
                   <p className="margin-top">"Find Me A Home, Find Me A Family"</p>
-				  </div>
+                </div>
                 <div>
                   <MainButtons />
                 </div>
@@ -71,19 +71,19 @@ export class Main extends React.Component {
                 alt="Third slide"
               />
               <Carousel.Caption className="caption-margin">
-			  <div>
+                <div>
                   <h1 className='font-family'>Nimnim</h1>
                   <p className="for-adoption-position">For Adoption</p>
                   <p className="margin-top">"Find Me A Home, Find Me A Family"</p>
-				  </div>
+                </div>
                 <div>
                   <MainButtons />
                 </div>
               </Carousel.Caption>
             </Carousel.Item>
           </Carousel >
-		  <Header/>
-		  <Footer/>
+          <Header />
+          <Footer />
         </div >
       </>
     );
