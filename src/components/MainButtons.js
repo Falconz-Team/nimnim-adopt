@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Col, Row, Container, ToggleButtonGroup, ToggleButton } from 'react-bootstrap';
+import {  Row, Container, ToggleButtonGroup, ToggleButton } from 'react-bootstrap';
 
 export class MainButtons extends Component {
   render() {
