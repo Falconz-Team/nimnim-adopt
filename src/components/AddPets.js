@@ -4,6 +4,8 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import axios from 'axios';
+import UpdateForm from './UpdateForm';
+import './AddPets.css';
 export class AddPets extends React.Component {
 
   constructor(props) {
@@ -14,57 +16,147 @@ export class AddPets extends React.Component {
       gender: '',
       description: '',
       image_Url: '',
+	  updateBreed: '',
+      updateAge: '',
+      updateGender: '',
+      updateDescription: '',
+      updateImage_Url: '',
       creatData: '',
-	  userEmail : 'mohammad@k.com',
-	  REACT_APP_SERVER_URL : process.env.REACT_APP_SERVER_URL,
-	  NumberPets :0,
+      userEmail: 'mohammad@k.com',
+      REACT_APP_SERVER_URL: process.env.REACT_APP_SERVER_URL,
+      NumberPets: 0,
+	  updateIndx :'',
+	  showForm: false,
+	  files: null,
+	  updateFlies: null,
     };
+    this.handleChange = this.handleChange.bind(this);
+    this.updateHandleChange = this.updateHandleChange.bind(this);
   }
+
+  handleChange(event) {
+    this.setState({
+      files: URL.createObjectURL(event.target.files[0]),
+    });
+   
+  }
+
+  
 
 	breed = (breed) => this.setState({ breed });
 	age = (age) => this.setState({ age });
 	gender = (gender) => this.setState({ gender });
 	description = (description) => this.setState({ description });
 
-	image = (imag) => {
-	  this.setState({
-	    image_Url: imag,
-	  });
-	 
-	}
+	
 
+
+	updateBreed = (updateBreed) => this.setState({ updateBreed });
+	updateAge = (updateAge) => this.setState({ updateAge });
+	updateGender = (updateGender) => this.setState({ updateGender });
+	updateDescription = (updateDescription) => this.setState({ updateDescription });
+
+
+	updateHandleChange = (e) =>{
+	  this.setState({
+	    updateFlies: URL.createObjectURL(e.target.files[0]),
+		  });
+	}
+	componentDidMount  = () =>{
+	    axios.get(`${this.state.REACT_APP_SERVER_URL}/pet?email=${this.state.userEmail}`).then((response) => {
+	    this.setState({
+	      creatData: response.data.pets,
+	      NumberPets: response.data.pets.length,
+	    });
+	  });
+	}
 
 	createPets = (e) => {
 	  e.preventDefault();
-	  console.log('img after select',this.state.image_Url);
 	  const reqBody = {
-	    userEmail: this.state.userEmail,
+	    email: this.state.userEmail,
 	    breed: this.state.breed,
 	    age: this.state.age,
 	    gender: this.state.gender,
 	    description: this.state.description,
-	    image_Url: this.state.image_Url,
+	    image_Url: this.state.files,
 
 	  };
-	  console.log('image go',this.state.image_Url);
 	  axios.post(`${this.state.REACT_APP_SERVER_URL}/pet`, reqBody).then(response => {
-		  console.log('backdata',response);
 	    this.setState({
 	      creatData: response.data.pets,
-		  NumberPets: response.data.pets.length,
+	      NumberPets: response.data.pets.length,
 	    });
 	  }).catch(error =>
 	    alert(error.message),
 	  );
 	}
 
+	deletePet = (indx) => {
+
+	  axios.delete(`${this.state.REACT_APP_SERVER_URL}/pet/${indx}?email=${this.state.userEmail}`).then((response) => {
+	    console.log('backdata', response);
+	    this.setState({
+	      creatData: response.data.pets,
+	      NumberPets: response.data.pets.length,
+		  showForm : false,
+	    });
+	  }).catch(error =>
+	    alert(error.message),
+	  );
+	}
+
+	UpdatePet = (e) => {
+
+	  e.preventDefault();
+	  const reqBody = {
+	    email: this.state.userEmail,
+	    breed: this.state.updateBreed,
+	    age: this.state.updateAge,
+	    gender: this.state.updateGender,
+	    description: this.state.updateDescription,
+	    image_Url: this.state.updateFlies,
+	  };
+
+	  axios.put(`${this.state.REACT_APP_SERVER_URL}/pet/${this.state.updateIndx}`, reqBody).then(response => {
+	    console.log('post data', response);
+	    this.setState({
+	      creatData: response.data.pets,
+	      NumberPets: response.data.pets.length,
+	      showUpdateModel: false,
+		  showForm: false,
+	    });
+	  }).catch(error =>
+	    alert(error.message),
+	  );
+
+	}
+
+
+	openUpdateForm = (indx) => {
+	  this.setState({
+	    showForm: true,
+	    updateIndx: indx,
+	  });
+	}
+    closeUpdateForm = () => {
+      this.setState({
+        showForm: false,
+      });
+    }
 
 
 
-	render() {
+
+
+
+
+
+    render() {
 	  return (
-	    <>
-	      <div>
+	    <><div id={'body'}>
+	      <div id ="AddForm">
+		  Submit your request and we will respond as soon as possible
 	        <Form onSubmit={(e) => this.createPets(e)}>
 	          <Form.Group className="mb-3">
 	            <Form.Label>breed</Form.Label>
@@ -83,55 +175,61 @@ export class AddPets extends React.Component {
 	            <Form.Control type="text" onChange={(e) => this.description(e.target.value)} />
 	          </Form.Group>
 	          <Form.Group  >
-	            <Form.Label>default image</Form.Label>
-	            <Form.Control onChange={(e) => this.image(e.target.value)} as="select">
-	              <option >plz select kind of your pet</option>
-	              <option value ="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToFfAhy7V097GEFRDPebLCXu1KD2qEIJavgw&usqp=CAU">cat</option>
-	              <option value ="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRayEsDcc7SJXiQdiv6DI6iMdyQKxoZpbKRGA&usqp=CAU">dog</option>
-	              <option value ="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHkX6eLIAycYpVEgiiP1rNBbOtPuronIFtvw&usqp=CAU">bird</option>
-	              <option value ="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ78J1bYAFMlYT_07y4rC4VGHeofOnhMk2Zqg&usqp=CAU">other</option>
-	            </Form.Control>
-	            <Form.Text className="text-muted">
-								We will allow you to add a private picture of your pet when accepting your request
-	            </Form.Text>
+	            <Form.Label>select image</Form.Label>
+                <Form.Control type="file" onChange={this.handleChange} />
 	          </Form.Group>
-	          <Button variant="primary" type="submit">
+	          <Button  type="submit" className="addPets">
 							AddPets
 	          </Button>
 	        </Form>
 	      </div>
-	      <div>
+	      <div id="cardRender">
+			  <div id="card">
 	        {
-	          this.state.NumberPets> 0 &&
-			  this.state.creatData.map(value =>{
-			    console.log('img',value.image_Url);
-				  return  <Card style={{ width: '18rem' }}>
-					  
-				  <Card.Img variant="top" src={value.image_Url} />
-				  <Card.Body>
-					  <Card.Title>{value.breed}</Card.Title>
-					  <Card.Text>
-					  {value.age}
-					  </Card.Text>
-					  <Card.Text>
-					  {value.gender}
-					  </Card.Text>
-					  <Card.Text>
-					  {value.description}
-					  </Card.Text>
-					  <Button variant="primary">delete</Button>
-					  <Button variant="primary">update</Button>
+	          this.state.NumberPets > 0 &&
+						this.state.creatData.map((value, indx) => {
+						  return <Card style={{ width: '14rem' }}>
 
-				  </Card.Body>
-				  </Card>;
-			  })
-			 
+						    <Card.Img variant="top" src={value.image_Url} />
+						    <Card.Body className="cardBody">
+						      <Card.Title>breed :{value.breed}</Card.Title>
+						      <Card.Text>
+							  age: {value.age}
+						      </Card.Text>
+						      <Card.Text>
+						      gender:  {value.gender}
+						      </Card.Text>
+						      <Card.Text>
+							  description : {value.description}
+						      </Card.Text>
+						      <Button variant="primary" onClick={() => this.deletePet(indx)}>delete</Button>
+							  <Button variant="secondary" onClick={() => this.openUpdateForm(indx)}>Update</Button>
+						    </Card.Body>
+						  </Card>;
+						})
+
 	        }
+            </div>
+            <div>
 
+			
+	        {this.state.showForm && 
+				<UpdateForm 
+				  closeUpdateForm={this.closeUpdateForm} 
+				  updateBreed={this.updateBreed}
+				  updateAge={this.updateAge}
+				  updateGender={this.updateGender} 
+				  updateDescription={this.updateDescription}
+				  UpdatePet={this.UpdatePet}
+				  updateHandleChange={this.updateHandleChange}
+				  />
+	        }
+            </div>
 	      </div>
+		  </div>
 	    </>
 	  );
-	}
+    }
 }
 
 export default AddPets;
