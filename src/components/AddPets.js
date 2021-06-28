@@ -32,13 +32,16 @@ export class AddPets extends React.Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.updateHandleChange = this.updateHandleChange.bind(this);
+   
   }
 
   handleChange(event) {
+
     this.setState({
-      files: URL.createObjectURL(event.target.files[0]),
+      files:  URL.createObjectURL(event.target.files[0]),
+	  
     });
-   
+    console.log('1',this.state.files);
   }
 
   
@@ -63,6 +66,8 @@ export class AddPets extends React.Component {
 		  });
 	}
 	componentDidMount  = () =>{
+
+
 	    axios.get(`${this.state.REACT_APP_SERVER_URL}/pet?email=${this.state.userEmail}`).then((response) => {
 	    this.setState({
 	      creatData: response.data.pets,
@@ -73,6 +78,8 @@ export class AddPets extends React.Component {
 
 	createPets = (e) => {
 	  e.preventDefault();
+	  console.log('2',this.state.files);
+
 	  const reqBody = {
 	    email: this.state.userEmail,
 	    breed: this.state.breed,
@@ -211,6 +218,7 @@ export class AddPets extends React.Component {
 	        }
             </div>
             <div>
+              
 
 			
 	        {this.state.showForm && 
