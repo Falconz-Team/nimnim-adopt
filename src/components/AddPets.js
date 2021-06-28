@@ -163,32 +163,34 @@ export class AddPets extends React.Component {
 	  return (
 	    <><div id={'body'}>
 	      <div id ="AddForm">
-		  Submit your request and we will respond as soon as possible
+		 <p style={{textAlign: 'left' }}>Submit your request and we will respond as soon as possible</p> 
 	        <Form onSubmit={(e) => this.createPets(e)}>
 	          <Form.Group className="mb-3">
 	            <Form.Label>breed</Form.Label>
-	            <Form.Control type="text" onChange={(e) => this.breed(e.target.value)} />
+	            <Form.Control className="input" type="text" onChange={(e) => this.breed(e.target.value)} />
 	          </Form.Group>
 	          <Form.Group className="mb-3" >
 	            <Form.Label>age</Form.Label>
-	            <Form.Control type="text" onChange={(e) => this.age(e.target.value)} />
+	            <Form.Control className="input" type="text" onChange={(e) => this.age(e.target.value)} />
 	          </Form.Group>
 	          <Form.Group className="mb-3">
 	            <Form.Label>gender</Form.Label>
-	            <Form.Control type="text" onChange={(e) => this.gender(e.target.value)} />
+	            <Form.Control className="input" type="text" onChange={(e) => this.gender(e.target.value)} />
 	          </Form.Group>
 	          <Form.Group className="mb-3">
 	            <Form.Label>description</Form.Label>
-	            <Form.Control type="text" onChange={(e) => this.description(e.target.value)} />
+	            <Form.Control className="input" type="text" onChange={(e) => this.description(e.target.value)} />
 	          </Form.Group>
 	          <Form.Group  >
-	            <Form.Label>select image</Form.Label>
-                <Form.Control type="file" onChange={this.handleChange} />
+                <Form.Control style={{marginLeft: '20px' }}className="input" type="file" onChange={this.handleChange} />
 	          </Form.Group>
-	          <Button  type="submit" className="addPets">
+			  <Form.Group  style={{textAlign:'right' , marginRight :'168px'}}>
+	          <Button  type="submit"  style={{marginTop: '-95px' ,color: 'black' , backgroundColor:'navajowhite' }}>
 							AddPets
 	          </Button>
+			  </Form.Group>
 	        </Form>
+            
 	      </div>
 	      <div id="cardRender">
 			  <div id="card">
@@ -197,7 +199,7 @@ export class AddPets extends React.Component {
 						this.state.creatData.map((value, indx) => {
 						  return <Card style={{ width: '14rem' }}>
 
-						    <Card.Img variant="top" src={value.image_Url} />
+						    <Card.Img variant="top" src={value.image_Url} style={{ height: '150px' }} />
 						    <Card.Body className="cardBody">
 						      <Card.Title>breed :{value.breed}</Card.Title>
 						      <Card.Text>
