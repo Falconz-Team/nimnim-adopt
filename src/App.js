@@ -19,7 +19,7 @@ import Other from './components/Other';
 export class App extends Component {
   render() {
     return (
-      <div>
+      <div style={{height: '100%'}}>
         <Router>
           <Header />
           <Switch>
