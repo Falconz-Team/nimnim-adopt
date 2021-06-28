@@ -9,6 +9,7 @@ export class Cats extends Component {
       serverUrl: process.env.REACT_APP_SERVER_URL,
       image_Url: '',
       petData: [],
+
     };
   }
 
