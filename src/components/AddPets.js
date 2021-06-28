@@ -1,10 +1,10 @@
+import React, { Component } from 'react';
 import React from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import axios from 'axios';
 export class AddPets extends React.Component {
-
 
   constructor(props) {
     super(props);
