@@ -3,17 +3,16 @@
 }
 
 .bag-image {
-	color:#313437;
-	background-image: url('https://i.pinimg.com/564x/eb/27/11/eb27114acb43a4b82ac9507725f8fa73.jpg');
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position-y: bottom;
+	background-image: url('https://images.unsplash.com/photo-1515339760107-1952b7a08454?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8bmljZSUyMGJhY2tncm91bmR8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');
+background-size: cover;
+background-repeat: no-repeat;
 }
 
 .title-style {
 	font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-	font-size: 40px;
+	font-size: 50px;
 	text-shadow: 2px 2px 5px #313437;
+color: black;
 }
   
 .box-font-color {
@@ -23,7 +22,7 @@
 
 .font-color {
 	color:antiquewhite;
-	font-size: 15px;
+	font-size: 6mm;
 	margin-top: -5%;
 }
   
@@ -66,25 +65,30 @@
 .team-boxed .item .box {
 	text-align:center;
 	padding:30px;
-	background-color:#fff;
+	background-color : #ebecf4;
 	margin-bottom:30px;
 	height: 100%;
 	width: 100%;
+	border-radius: 10px;
+
 }
-  
+
 .team-boxed .item .name {
 	font-weight:bold;
 	margin-top:28px;
 	margin-bottom:8px;
+	font-size: 5mm;
 	color:inherit;
 }
-  
+
 .team-boxed .item .title {
 	text-transform:uppercase;
 	font-weight:bold;
 	color:#81878d;
 	letter-spacing:2px;
 	font-size:13px;
+	margin-right: 0;
+	margin-top: 0;
 }
   
 .team-boxed .item .description {
@@ -112,5 +116,4 @@
 .team-boxed .social a:hover {
 	opacity:1;
 }
-  
   
