@@ -21,7 +21,7 @@ export class App extends Component {
     return (
       <div style={{height: '100%'}}>
         <Router>
-          <Header />
+          {/* <Header /> */}
           <Switch>
             <Route path="/" exact>
               <Main />
@@ -42,7 +42,7 @@ export class App extends Component {
               <AboutUs />
             </Route>
           </Switch>
-          <Footer />
+          {/* <Footer /> */}
         </Router>
         <Router>
           <Switch>
