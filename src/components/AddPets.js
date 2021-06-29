@@ -6,6 +6,7 @@ import Card from 'react-bootstrap/Card';
 import axios from 'axios';
 import UpdateForm from './UpdateForm';
 import './AddPets.css';
+import { withAuth0 } from '@auth0/auth0-react';
 export class AddPets extends React.Component {
 
   constructor(props) {
@@ -45,7 +46,7 @@ export class AddPets extends React.Component {
   }
 
   
-
+  
 	breed = (breed) => this.setState({ breed });
 	age = (age) => this.setState({ age });
 	gender = (gender) => this.setState({ gender });
@@ -66,7 +67,6 @@ export class AddPets extends React.Component {
 		  });
 	}
 	componentDidMount  = () =>{
-
 
 	    axios.get(`${this.state.REACT_APP_SERVER_URL}/pet?email=${this.state.userEmail}`).then((response) => {
 	    this.setState({
@@ -157,9 +157,8 @@ export class AddPets extends React.Component {
 
 
 
-
-
     render() {
+
 	  return (
 	    <><div id={'body'}>
 	      <div id ="AddForm">
@@ -189,6 +188,7 @@ export class AddPets extends React.Component {
 							AddPets
 	          </Button>
 			  </Form.Group>
+		
 	        </Form>
             
 	      </div>
