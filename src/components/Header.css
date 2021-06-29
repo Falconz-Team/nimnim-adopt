@@ -1,14 +1,25 @@
 .header-color{
 	background-color: transparent;
+	width: 100%;
+	z-index: 100;
+	position: fixed;
+	padding :10px 0;
+	top:0;
 }
 
-
-
+.logo {
+	position: relative;
+	left: 0%;
+}
 .position {
 	position: absolute;
-	z-index: 100;
-	bottom: 620px;
-	left: 200px
+	
+	top:0px;
+	left: 200px;
+	
+
+	
+
 }
 
 .font-color{
