@@ -22,8 +22,8 @@ export class AddPets extends React.Component {
       updateDescription: '',
       updateImage_Url: '',
       creatData: '',
-      userEmail: 'mohammad@k.com',
-      REACT_APP_SERVER_URL: process.env.REACT_APP_SERVER_URL,
+      userEmail: 'aburadwansaleh@gmail.com',
+      serverUrl: process.env.REACT_APP_SERVER_URL,
       NumberPets: 0,
 	  updateIndx :'',
 	  showForm: false,
@@ -44,15 +44,10 @@ export class AddPets extends React.Component {
     console.log('1',this.state.files);
   }
 
-  
-
 	breed = (breed) => this.setState({ breed });
 	age = (age) => this.setState({ age });
 	gender = (gender) => this.setState({ gender });
 	description = (description) => this.setState({ description });
-
-	
-
 
 	updateBreed = (updateBreed) => this.setState({ updateBreed });
 	updateAge = (updateAge) => this.setState({ updateAge });
@@ -68,7 +63,7 @@ export class AddPets extends React.Component {
 	componentDidMount  = () =>{
 
 
-	    axios.get(`${this.state.REACT_APP_SERVER_URL}/pet?email=${this.state.userEmail}`).then((response) => {
+	    axios.get(`${this.state.serverUrl}/pet?email=${this.state.userEmail}`).then((response) => {
 	    this.setState({
 	      creatData: response.data.pets,
 	      NumberPets: response.data.pets.length,
@@ -89,7 +84,7 @@ export class AddPets extends React.Component {
 	    image_Url: this.state.files,
 
 	  };
-	  axios.post(`${this.state.REACT_APP_SERVER_URL}/pet`, reqBody).then(response => {
+	  axios.post(`${this.state.serverUrl}/pet`, reqBody).then(response => {
 	    this.setState({
 	      creatData: response.data.pets,
 	      NumberPets: response.data.pets.length,
@@ -101,7 +96,7 @@ export class AddPets extends React.Component {
 
 	deletePet = (indx) => {
 
-	  axios.delete(`${this.state.REACT_APP_SERVER_URL}/pet/${indx}?email=${this.state.userEmail}`).then((response) => {
+	  axios.delete(`${this.state.serverUrl}/pet/${indx}?email=${this.state.userEmail}`).then((response) => {
 	    console.log('backdata', response);
 	    this.setState({
 	      creatData: response.data.pets,
@@ -125,7 +120,7 @@ export class AddPets extends React.Component {
 	    image_Url: this.state.updateFlies,
 	  };
 
-	  axios.put(`${this.state.REACT_APP_SERVER_URL}/pet/${this.state.updateIndx}`, reqBody).then(response => {
+	  axios.put(`${this.state.serverUrl}/pet/${this.state.updateIndx}`, reqBody).then(response => {
 	    console.log('post data', response);
 	    this.setState({
 	      creatData: response.data.pets,
@@ -138,8 +133,7 @@ export class AddPets extends React.Component {
 	  );
 
 	}
-
-
+	
 	openUpdateForm = (indx) => {
 	  this.setState({
 	    showForm: true,
@@ -151,13 +145,6 @@ export class AddPets extends React.Component {
         showForm: false,
       });
     }
-
-
-
-
-
-
-
 
     render() {
 	  return (
@@ -220,9 +207,7 @@ export class AddPets extends React.Component {
 	        }
             </div>
             <div>
-              
 
-			
 	        {this.state.showForm && 
 				<UpdateForm 
 				  closeUpdateForm={this.closeUpdateForm} 
