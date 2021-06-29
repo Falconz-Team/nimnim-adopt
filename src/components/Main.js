@@ -1,8 +1,8 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import MainButtons from './MainButtons';
-import Header from './Header';
-import Footer from './Footer';
+// import Header from './Header';
+// import Footer from './Footer';
 import './carousel.css';
 
 
@@ -10,13 +10,6 @@ export class Main extends React.Component {
   render() {
     return (
       <div class="container-fluid">
-
-        {/* <div class="row">
-          <div class="col-sm" style={{margin: 0, padding: 0, top: 0}}>
-            <Header />
-          </div>
-        </div> */}
-        <Header />
         <div class="row">
           <div class="col-sm" style={{position: 'absolute',margin: 0, padding: 0, top: 0}}>
             <Carousel fade={true} controls={false} className="carousel-position">
@@ -63,11 +56,6 @@ export class Main extends React.Component {
             </div>
           </div>
         </div>
-        <Footer />
-        {/* <div class="row">
-          
-        </div> */}
-
       </div>
     );
   }
