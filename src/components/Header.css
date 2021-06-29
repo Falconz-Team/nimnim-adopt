@@ -28,6 +28,7 @@
 .text-my-own-color {
 	color: rgb(255, 235, 205) !important; 
 	text-shadow: 1px 1px 1px #ccc0c86c;
+	font-size: 15px;
 }
 
 .text-my-own-color:hover, .text-my-own-color:active {

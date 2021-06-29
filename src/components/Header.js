@@ -7,7 +7,7 @@ import Logout from './Logout';
 
 export class Header extends React.Component {
   render() {
- 
+
     const { isAuthenticated } = this.props.auth0;
     return (
       <div class="header-color">
@@ -34,16 +34,19 @@ export class Header extends React.Component {
                 <Nav.Item>
                   <Nav.Link eventKey="AboutUs" href="AboutUs" className="text-my-own-color">ABOUT US</Nav.Link>
                 </Nav.Item>
-                { !isAuthenticated &&
-                  <Nav.Item>
+                <Nav.Item>
+                  {!isAuthenticated &&
+
                     <Login />
-                  </Nav.Item>
-                }
-                {isAuthenticated &&
-                  <Nav.Item>
+                  }
+                </Nav.Item>
+
+                <Nav.Item>
+                  {isAuthenticated &&
                     <Logout />
-                  </Nav.Item>
-                }
+                  }
+                </Nav.Item>
+
 
               </Nav>
             </Col>
