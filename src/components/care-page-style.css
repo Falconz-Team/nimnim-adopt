@@ -1,0 +1,32 @@
+.first-img{
+    margin-top: 15px;
+    height: 40vh !important;
+}
+
+.second-img{
+
+    margin-top: 15px;
+    height: 40vh !important;
+   
+}
+
+.h2{
+   text-align: center;
+   margin-top: 10px;
+   margin-bottom: 10px;
+}
+
+.chart{
+    height: 65vh !important;
+    width: 100%;
+    margin-top: 40px;
+    margin-left: 15px;
+
+}
+.title {
+    text-align: center;
+    margin-right: 50px;
+    margin-top: 40px;
+}
+
+

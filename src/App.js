@@ -41,11 +41,6 @@ export class App extends Component {
             <Route path="/AboutUs">
               <AboutUs />
             </Route>
-          </Switch>
-          <Footer />
-        </Router>
-        <Router>
-          <Switch>
             <Route path="/Cats" exact>
               <Cats />
             </Route>
@@ -58,8 +53,8 @@ export class App extends Component {
             <Route path="/Other" exact>
               <Other />
             </Route>
-
           </Switch>
+          <Footer />
         </Router>
       </div>
     );

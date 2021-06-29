@@ -1,8 +1,8 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import MainButtons from './MainButtons';
-import Header from './Header';
-import Footer from './Footer';
+// import Header from './Header';
+// import Footer from './Footer';
 import './carousel.css';
 
 
@@ -82,8 +82,8 @@ export class Main extends React.Component {
               </Carousel.Caption>
             </Carousel.Item>
           </Carousel >
-          <Header />
-          <Footer />
+          {/* <Header /> */}
+          {/* <Footer /> */}
         </div >
       </>
     );
