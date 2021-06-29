@@ -46,7 +46,7 @@
 	<title>React App</title>
 </head>
 
-<body>
+<body style="height: 1000px;">
 	<noscript>You need to enable JavaScript to run this app.</noscript>
 	<div id="root"></div>
 	<!--
@@ -59,6 +59,17 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+	<script>
+		window.onscroll = function () { scrollFunction() };
+
+		function scrollFunction() {
+			if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+				document.getElementById("ee").style.backgroundColor = "#c7a88e";
+			} else {
+				document.getElementById("ee").style.backgroundColor = "transparent";
+			}
+		}
+	</script>
 </body>
 
 

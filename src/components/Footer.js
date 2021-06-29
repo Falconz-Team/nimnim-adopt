@@ -9,35 +9,35 @@ export class Footer extends React.Component {
         <footer class=" text-center position-footer">
           <div className="margin-bottom">
             <div class="container p-4 pb-0">
-              <section class="mb-4">
+              <section class="mb-4" id="bg-color">
                 <a class="btn btn-secondary btn-floating m-1" href="#!" role="button"
                 ><i class="fa fa-facebook-f"></i
-                  ></a>
+                ></a>
 
                 <a class="btn btn-secondary btn-floating m-1" href="#!" role="button"
                 ><i class="fa fa-twitter"></i
-                  ></a>
+                ></a>
 
                 <a class="btn btn-secondary btn-floating m-1" href="#!" role="button"
                 ><i class="fa fa-google"></i
-                  ></a>
+                ></a>
 
                 <a class="btn btn-secondary btn-floating m-1" href="#!" role="button"
                 ><i class="fa fa-instagram"></i
-                  ></a>
+                ></a>
 
                 <a class="btn btn-secondary btn-floating m-1" href="#!" role="button"
                 ><i class="fa fa-github"></i
-                  ></a>
+                ></a>
               </section>
               <div className="footer-top">
                 <div class="text-center">
-			  All Rights Are Reserved : &#169; 2021 The Falcons
+                  All Rights Are Reserved : &#169; 2021 The Falcons
                 </div>
-		  </div>
+              </div>
             </div>
-		  </div>
-		
+          </div>
+
         </footer>
       </>
     );

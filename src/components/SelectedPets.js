@@ -4,18 +4,6 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
 export class SelectedPets extends Component { 
-    // constructor(props){
-    //     super(props);
-    //     this.state = {
-    //         setShow: false,
-    //     };
-    // }
-    // handleClose = () => {
-    // this.setState({
-    //     setShow: false,
-    // });
-    // }
-
     
     render() {
         return (
@@ -27,7 +15,7 @@ export class SelectedPets extends Component {
                 </Modal.Header>
                 <Modal.Body style={{  display: 'grid', gridTemplateColumns: '50% 50%' }}>
                     <Card style={{height: '490px'}}>
-                        <img src={this.props.Image_Url} alt="image" />
+                        <img src={this.props.Image_Url} alt="imag-alt" />
                     </Card>
                     <div style={{marginLeft: '30px' }}>
                         <div>
