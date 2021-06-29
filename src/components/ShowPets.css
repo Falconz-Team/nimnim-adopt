@@ -5,10 +5,9 @@
     padding-bottom: 5px;
 
   }
-  body {
+  .modelpets {
     margin: auto;
     width: 1350px;
-    height: auto;
   }
 
   .cat .image {
