@@ -4,10 +4,10 @@
     gap: 20px;
     font-size: 5mm;
     color: bold;
-    height: 90vh;
+    height: 100vh;
     margin: 0;
-background-image: url('https://images.unsplash.com/photo-1514829560620-c510997c9c41?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60');
-  background-size: cover;
+    background-image: url('https://images.unsplash.com/photo-1514829560620-c510997c9c41?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60');
+    background-size: cover;
     background-repeat: no-repeat;
 
 }
@@ -18,35 +18,35 @@ background-image: url('https://images.unsplash.com/photo-1514829560620-c510997c9
 #card{
     display: flex;
     flex-wrap: wrap;
-    color: rgb(240, 172, 1);
     margin-top: 160px;
     margin-left: 110px;
     gap: 30px;
-  
 }
 
 .mb-3{
     margin-left: 10px;
     margin: auto;
-        width: 50%;
+    width: 50%;
 }
 #AddForm{
-    font-size: 6mm;
+    font-size: 5mm;
     font-weight: bold;
     padding: 20px;
     height: 600px;
     margin-top: 90px;
     margin-left: 20px;
     border-radius: 25px;
-    background-color: rgba(87, 67, 71, 0.192)
+    background-color: rgba(87, 67, 71, 0.192);
+	font-family: 'Playfair Display', serif;
 }
 .addPets{
     text-align: right;
 }
 
 .cardBody{
-    background-color: rgb(3, 62, 65);
-  color: navajowhite;
+	background-color: #746456;
+    color: #dbdbdb;
+	font-family: 'Playfair Display', serif;
 }
 #gender{
     display: grid;
@@ -74,11 +74,12 @@ background-image: url('https://images.unsplash.com/photo-1514829560620-c510997c9
 }
 
 #p{
-    color: white;
+    color: #f1f1f1;
     background-color: rgba(87, 67, 71, 0.25);
     border-radius: 10px;
     padding: 10px;
     box-shadow: 2px 2px 4px rgba(87, 67, 71, 0.2) ;
+    font-family: 'Kalam', cursive;
 }
 #Description{
     margin-top: -30px;
@@ -107,11 +108,14 @@ background-image: url('https://images.unsplash.com/photo-1514829560620-c510997c9
     border: #928b7f;
     margin-top: 20px;
     margin-left: 30px;
-
 }
 
 .buttonUpdate:hover{
     background-color: #f0f0ee;
     color: #5f584d;
    
+}
+
+.cardDesign { 
+	box-shadow: 1px 1px 2px #5f584d;
 }
