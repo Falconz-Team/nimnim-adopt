@@ -7,7 +7,6 @@ export class Header extends React.Component {
     return (
       <div class="header-color">
         <div className='container'>
-        
           <Row >
             <Col>
 			  <a href="/"> 
