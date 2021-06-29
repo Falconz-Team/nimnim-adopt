@@ -9,13 +9,15 @@ export class CarePage extends Component {
   render() {
 
     return (
-      <div>
+      <div class="AllPage1">
+
+         <div class="AllPage2"> 
         <div className='all-cards pt-5 mt-5'>
           <div className='container'>
             <div className='row row-cols-2 '>
               <div className='col1'>
-               
-                <h3 className= 'pt-5  mt-5  '>Guide for Taking Care of Animals</h3>
+
+                <h3 className='pt-5  mt-5  '>Guide for Taking Care of Animals</h3>
 
                 <p>Bringing a new pet into your house can be as intimidating as it is exciting. Even if you already have an animal or two at home, taking care of animals often comes along with plenty of questions.
 
@@ -34,22 +36,81 @@ export class CarePage extends Component {
                 </ul>
 
                 <br></br>
-               
+
 
               </div>
               <div className='col'>
                 <div className='container'>
                   <Image className='chart' src="https://fv2-1.failiem.lv/thumb_show.php?i=ufmjsf8mz&view" rounded />
                 </div>
+                 </div> 
               </div>
             </div>
           </div>
         </div>
-
         <div>
+          <div>
+            <h2 className='h2'>Adoption Stories</h2>
+
+            <div className='all-cards'>
+              <div className='container'>
+                <div className='row row-cols-2 '>
+                  <div className='col'>
+                    <Image className="first-img" src="https://images.unsplash.com/photo-1553322396-0c9cd410975e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" rounded />
+
+                  </div>
+                  <div className='col'>
+                    <h3 className='  mt-5 '>1- Barry</h3>
+
+                    <br></br>
+
+                    <p >
+                      We went to Animal Humane Society We thought the process would take a while to find a pet that fit with our family,
+                      but we met Barry that very first night.
+                      our son Paul exclaimed (with his arms wrapped around our new dog), “I can’t believe how happy I am!”
+
+                      <br></br>
+
+                      - Kristin
+
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
 
 
-          {/* <h3>How to take care of domestic animals</h3>
+
+            <div className='all-cards'>
+              <div className='container'>
+                <div className='row row-cols-2 '>
+                  <div className='col'>
+                    <Image className="second-img" src="https://images.unsplash.com/photo-1555955924-a8c17aa846b2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" rounded />
+
+
+                  </div>
+                  <div className='col'>
+                    <h3 className=' mt-5 '>2- Sammy</h3>
+
+                    <br></br>
+
+                    <p >
+                      Our lives were full until we adopted our cat.
+                      We adore her and can't imagine life without her.
+                      I hate to think what her life was like before us. But now she knows only love.
+                      Thank you so much for everything you did to give the Unloved a second chance.
+
+                      <br></br>
+
+                      - Jessica
+
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* <h3>How to take care of domestic animals</h3>
 
           <h5>Dogs</h5>
 
@@ -71,9 +132,9 @@ export class CarePage extends Component {
 
           <h2>Share Your Story</h2> */}
 
-          <br></br>
+            <br></br>
 
-          {/* <Container>
+            {/* <Container>
             <Row>
               <Col xs={6} md={4}>
                 <Image src="https://assets.animalhumanesociety.org/animalhumanesociety.org/files/styles/scale_width_960/public/media/image/2019-10/Barry_.jpg?itok=nnW9pJWa" rounded />
@@ -81,70 +142,12 @@ export class CarePage extends Component {
             </Row>
           </Container> */}
 
-          <h2 className='h2 mt-5 '>Share Your Story</h2>
-
-          <div className='all-cards'>
-            <div className='container'>
-              <div className='row row-cols-2 '>
-                <div className='col'>
-                  <Image className="first-img" src="https://images.unsplash.com/photo-1553322396-0c9cd410975e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" rounded />
-
-                </div>
-                <div className='col'>
-                  <h3 className= '  mt-5 '>1- Barry</h3>
-
-                  <br></br>
-
-                  <p >
-                    We went to Animal Humane Society We thought the process would take a while to find a pet that fit with our family,
-                    but we met Barry that very first night.
-                    our son Paul exclaimed (with his arms wrapped around our new dog), “I can’t believe how happy I am!”
-
-                    <br></br>
-
-                    - Kristin
-
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-
-          <div className='all-cards'>
-            <div className='container'>
-              <div className='row row-cols-2 '>
-                <div className='col'>
-                  <Image className="second-img" src="https://images.unsplash.com/photo-1555955924-a8c17aa846b2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" rounded />
-
-
-                </div>
-                <div className='col'>
-                  <h3 className= ' mt-5 '>2- Sammy</h3>
-
-                  <br></br>
-
-                  <p >
-                    Our lives were full until we adopted our cat.
-                    We adore her and can't imagine life without her.
-                    I hate to think what her life was like before us. But now she knows only love.
-                    Thank you so much for everything you did to give the Unloved a second chance.
-
-                    <br></br>
-
-                    - Jessica
-
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
 
 
 
 
-          {/* <Container>
+
+            {/* <Container>
             <Row>
               <Col xs={6} md={4}>
                 <Image src="https://assets.animalhumanesociety.org/animalhumanesociety.org/files/styles/scale_width_960/public/media/image/2019-10/axel_1_cropped.jpg?itok=xMHXXdvp" rounded />
@@ -199,9 +202,9 @@ export class CarePage extends Component {
 
           </p> */}
 
+          </div>
+
         </div>
-
-
       </div>
     );
   }
