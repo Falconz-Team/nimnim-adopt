@@ -1,13 +1,19 @@
 *{
 	box-sizing: border-box;
 }
-
-.bag-image {
-	color:#313437;
-	background-image: url('https://i.pinimg.com/564x/eb/27/11/eb27114acb43a4b82ac9507725f8fa73.jpg');
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position-x: left;
+/* 
+.big-container {
+	height: 100vh;
+} */
+.team-boxed {
+	background-color: red;
+	/* background-size: cover;
+	background-repeat: repeat-y; */
+	
+	/* position: -webkit-sticky;
+    position: sticky;
+	top: 0; */
+	/* position: fixed; */
 }
 
 .title-style {
@@ -68,8 +74,9 @@
 	padding:30px;
 	background-color:#fff;
 	margin-bottom:30px;
-	height: 100%;
+	height: 80%;
 	width: 100%;
+
 }
   
 .team-boxed .item .name {
@@ -80,11 +87,12 @@
 }
   
 .team-boxed .item .title {
-	text-transform:uppercase;
+	text-transform: uppercase;
 	font-weight:bold;
 	color:#81878d;
 	letter-spacing:2px;
 	font-size:13px;
+	text-align: center;
 }
   
 .team-boxed .item .description {
