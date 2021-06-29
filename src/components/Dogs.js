@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Row, Col, Image } from 'react-bootstrap';
 import axios from 'axios';
-
+// import '.'
 export class Dogs extends Component {
 
   constructor(props) {

@@ -10,53 +10,46 @@ import UpdateForm from './UpdateForm';
 import './AddPets.css';
 
 export class AddPets extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      breed: '',
+      age: '',
+      gender: '',
+      description: '',
+      image_Url: '',
+	  updateBreed: '',
+      updateAge: '',
+      updateGender: '',
+      updateDescription: '',
+      updateImage_Url: '',
+      creatData: '',
+      userEmail: 'aburadwansaleh@gmail.com',
+      serverUrl: process.env.REACT_APP_SERVER_URL,
+      NumberPets: 0,
+	  updateIndx :'',
+	  showForm: false,
+	  files: null,
+	  updateFlies: null,
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this.updateHandleChange = this.updateHandleChange.bind(this);
+   
+  }
+  handleChange(event) {
 
-	constructor(props) {
-		super(props);
-		this.state = {
-			breed: '',
-			age: '',
-			gender: '',
-			description: '',
-			image_Url: '',
-			updateBreed: '',
-			updateAge: '',
-			updateGender: '',
-			updateDescription: '',
-			updateImage_Url: '',
-			creatData: '',
-			userEmail: 'mohammad@k.com',
-			REACT_APP_SERVER_URL: process.env.REACT_APP_SERVER_URL,
-			NumberPets: 0,
-			updateIndx: '',
-			showForm: false,
-			files: null,
-			updateFlies: null,
-		};
-		this.handleChange = this.handleChange.bind(this);
-		this.updateHandleChange = this.updateHandleChange.bind(this);
-
-	}
-
-	handleChange(event) {
-
-		this.setState({
-			files: URL.createObjectURL(event.target.files[0]),
-
-		});
-		console.log('1', this.state.files);
-	}
-
-
+    this.setState({
+      files:  URL.createObjectURL(event.target.files[0]),
+	  
+    });
+    console.log('1',this.state.files);
+  }
 
 	breed = (breed) => this.setState({ breed });
 	age = (age) => this.setState({ age });
 	gender = (gender) => this.setState({ gender });
 	description = (description) => this.setState({ description });
-
-
-
-
+  
 	updateBreed = (updateBreed) => this.setState({ updateBreed });
 	updateAge = (updateAge) => this.setState({ updateAge });
 	updateGender = (updateGender) => this.setState({ updateGender });
@@ -69,8 +62,6 @@ export class AddPets extends React.Component {
 		});
 	}
 	componentDidMount = () => {
-
-
 		axios.get(`${this.state.REACT_APP_SERVER_URL}/pet?email=${this.state.userEmail}`).then((response) => {
 			this.setState({
 				creatData: response.data.pets,
@@ -103,7 +94,6 @@ export class AddPets extends React.Component {
 	}
 
 	deletePet = (indx) => {
-
 		axios.delete(`${this.state.REACT_APP_SERVER_URL}/pet/${indx}?email=${this.state.userEmail}`).then((response) => {
 			console.log('backdata', response);
 			this.setState({
@@ -117,7 +107,6 @@ export class AddPets extends React.Component {
 	}
 
 	UpdatePet = (e) => {
-
 		e.preventDefault();
 		const reqBody = {
 			email: this.state.userEmail,
@@ -141,8 +130,7 @@ export class AddPets extends React.Component {
 		);
 
 	}
-
-
+	
 	openUpdateForm = (indx) => {
 		this.setState({
 			showForm: true,
@@ -154,13 +142,6 @@ export class AddPets extends React.Component {
 			showForm: false,
 		});
 	}
-
-
-
-
-
-
-
 	render() {
 		return (
 			<><div id={'body'}>
@@ -190,7 +171,6 @@ export class AddPets extends React.Component {
 											name="group1"
 											type={'radio'}
 											
-											
 										/>
 									
 									<Form.Check className ="check" id="check2" onChange={()=>(this.gender('female'))}
@@ -198,16 +178,10 @@ export class AddPets extends React.Component {
 											label="Female"
 											name="group1"
 											type={'radio'}
-											
-											
 										/>
-									
 									</div>
-									
 								}
 							</Form.Group>
-						
-						
 						</Form.Group>
 						<Form.Group className="mb-3" id="Description">
 							<Form.Label>Description</Form.Label>
@@ -249,13 +223,9 @@ export class AddPets extends React.Component {
 									</Card.Body>
 								</Card>;
 							})
-
 						}
 					</div>
 					<div>
-
-
-
 						{this.state.showForm &&
 							<UpdateForm
 								closeUpdateForm={this.closeUpdateForm}

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './about-us.css';
-
 export class AboutUs extends Component {
   render() {
     return (
@@ -13,13 +12,7 @@ export class AboutUs extends Component {
                 <h2 class="text-center title-style">The Falcons</h2>
                 <p class="text-center font-color" >"It Takes Nothing Away From A Human To Be Kind To An Animal"</p>
               </div>
-
-                  
-                  
-               
                   <div class="row people ">
-
-
                   <div class="col-md-6 col-lg-3 item">
                       <div class="box">
                       <img class="rounded-circle" src="https://i.pinimg.com/564x/8c/93/12/8c9312509ade368a38c1e168da0d0d2b.jpg" alt="Saleh" />
@@ -30,9 +23,6 @@ export class AboutUs extends Component {
                         <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-github"></i></a></div>
                       </div>
                     </div>
-
-
-
                     <div class="col-md-6 col-lg-3 item">
                       <div class="box">
                         <img class="rounded-circle" src="https://i.pinimg.com/originals/90/29/81/9029819d281f6008055e931cb29d7b5b.png" alt="Mohammad" />
@@ -54,7 +44,6 @@ export class AboutUs extends Component {
                         <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-github"></i></a></div>
                       </div>
                     </div>
-
                     <div class="col-md-6 col-lg-3 item">
                       <div class="box">
                         <img class="rounded-circle" src="https://i.pinimg.com/564x/76/fb/b4/76fbb4f1fd098ac6aabf3e5ac86cabb8.jpg" alt="Samer" />
@@ -67,10 +56,7 @@ export class AboutUs extends Component {
                     </div>
 
                   </div>
-            
-              
                   <div class="row people justify-content-center" >
-
                     <div class="col-md-6 col-lg-3 item">
                       <div class="box">
                         <img class="rounded-circle" src="https://i.pinimg.com/564x/05/1e/4d/051e4d5ce8cf3005c2fd8d4656c0f29a.jpg" alt="Rawan" />
@@ -92,7 +78,6 @@ export class AboutUs extends Component {
                         <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-github"></i></a></div>
                       </div>
                     </div>
-
                     <div class="col-md-6 col-lg-3 item">
                       <div class="box">
                         <img class="rounded-circle" src="https://i.pinimg.com/564x/30/5b/9b/305b9b90d4e442e908d6a48ce395bd87.jpg" alt="Miral" />
@@ -103,7 +88,6 @@ export class AboutUs extends Component {
                         <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-github"></i></a></div>
                       </div>
                     </div>
-
                   </div>
             </div>
           </div>

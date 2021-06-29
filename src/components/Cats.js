@@ -17,14 +17,11 @@ export class Cats extends Component {
       Show: false,
       Breed:'',
       Age:'',
-      selected:'',
-      setShow: false,
-
+      selected:''
     };
-    this.hideModal = this.hideModal.bind(this);
   }
   hideModal = () => {
-    this.setState({ setShow: false });
+    this.setState({ Show: !this.state.Show });
   };
   
 
@@ -41,12 +38,6 @@ export class Cats extends Component {
       Show: true,
     })
   }
-  handleClose = ()=>{
-    this.setState({
-      setShow: false,
-    })
-  }
-
 
   componentDidMount = () => {
     axios.get(`${this.state.serverUrl}/pets`).then((response, idx) => {
@@ -68,11 +59,11 @@ export class Cats extends Component {
   render() {
     return (
       <>
-        <Row xs={1} md={3} className="g-4">
+        <Row xs={1} md={3} className="g-4" style={{marginTop:'80px'}}>
           {this.state.petData.map((obj, idx) => {
             return (
               <>
-                <div class="cat">
+                <div class="cat" >
                   <img src={obj.image_Url} alt="Avatar" class="image" />
                   <div class="overlay">
                     <div class="text">{obj.breed}
@@ -92,8 +83,8 @@ export class Cats extends Component {
                   gender={this.state.selected.gender}
                   description={this.state.selected.description}
                   Image_Url={this.state.selected.image_Url}
-                  shows={this.state.Show}
-                  HideModal={this.hideModal}
+                  Show={this.state.Show}
+                  hideModal={this.hideModal}
                 />
           
           {console.log(this.state.Show)}
