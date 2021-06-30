@@ -3,7 +3,7 @@ import { Container, Row, Col, Button, Modal } from 'react-bootstrap';
 import axios from 'axios';
 import './ShowPets.css';
 import SelectedPets from './SelectedPets';
-//I Love comments
+
 
 
 export class Other extends Component {
