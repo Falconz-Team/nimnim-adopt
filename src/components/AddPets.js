@@ -149,7 +149,7 @@ export class AddPets extends React.Component {
 					<p id="p">Fill the form with the proper information and submit your offer, your request will be responded soon.
 
 </p>
-					<Form onSubmit={(e) => this.createPets(e)}>
+					<Form onSubmit={(e) => this.createPets(e)} className="form-style">
 						<Form.Group className="mb-3">
 							<Form.Label>Breed</Form.Label>
 							<Form.Control placeholder="breed" className="input" type="text" onChange={(e) => this.breed(e.target.value)} />
@@ -161,11 +161,11 @@ export class AddPets extends React.Component {
 						<Form.Group className="mb-3" id="gender">
 							<Form.Label>Gender</Form.Label>
 							
-							<Form.Group className="mb-3"  >
+							<Form.Group className="mb-3">
 								{
-									<div className="mb-3" id="check" >
+									<div className="mb-3" id="check">
 										
-										<Form.Check className ="check" id="check1" onChange={()=>this.gender('male')}
+										<Form.Check className ="check" id="check1" onChange={()=>this.gender('Male')}
 											
 											label="Male"
 											name="group1"
@@ -173,7 +173,7 @@ export class AddPets extends React.Component {
 											
 										/>
 									
-									<Form.Check className ="check" id="check2" onChange={()=>(this.gender('female'))}
+									<Form.Check className ="check" id="check2" onChange={()=>(this.gender('Female'))}
 											
 											label="Female"
 											name="group1"
@@ -204,16 +204,16 @@ export class AddPets extends React.Component {
 						{
 							this.state.NumberPets > 0 &&
 							this.state.creatData.map((value, indx) => {
-								return <Card className="cardDesign" style={{ width: '18rem' }}>
+								return <Card className="cardDesign" style={{ width: '18rem'}}>
 
-									<Card.Img variant="top" src={value.image_Url} style={{ height: '150px' }} />
+									<Card.Img variant="top" src={value.image_Url} style={{height: '150px'}} />
 									<Card.Body className="cardBody">
-										<Card.Text>Breed :{value.breed}</Card.Text>
+										<Card.Text>Breed : {value.breed}</Card.Text>
 										<Card.Text>
-											Age: {value.age}
+											Age : {value.age}
 										</Card.Text>
 										<Card.Text>
-											Gender:  {value.gender}
+											Gender :  {value.gender}
 										</Card.Text>
 										<Card.Text>
 											Description : {value.description}
