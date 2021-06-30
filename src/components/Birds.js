@@ -66,11 +66,11 @@ export class Birds extends Component {
                 <div class="cat" >
                   <img style={{height:'460px'}}  src={obj.image_Url} alt="Avatar" class="image" />
                   <div class="overlay">
-                    <div class="text">{obj.breed}
-                      <br></br><Button onClick={() => {
+                    <div class="text"><p style = {{color:'#696152', fontWeight:'bold'}}>{obj.breed}</p>
+                      <button class = 'btn' onClick={() => {
                         this.ClickNow(obj.breed);
                         
-                      }}>More Information</Button>{' '}
+                      }}>More Information</button >{' '}
                     </div>
                   </div>
                 </div>
