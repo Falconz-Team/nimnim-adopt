@@ -1,3 +1,16 @@
+.AllPage1 {
+    
+        background: rgb(255,255,255);
+    background: linear-gradient(330deg, rgba(255,255,255,1) 63%, rgba(210,105,30,1) 91%, rgba(255,255,255,1) 100%);
+    
+}
+ .AllPage2{
+
+   /*  background: rgb(255,255,255);
+    background: linear-gradient(330deg, rgba(255,255,255,1) 63%, rgba(210,105,30,1) 91%, rgba(255,255,255,1) 100%); */ 
+
+    margin-top: 6%;
+} 
 .first-img{
     margin-top: 15px;
     height: 40vh !important;
@@ -10,17 +23,18 @@
    
 }
 
-.h2{
-   text-align: center;
-   margin-top: 10px;
+ .h2{
+   /* text-align: center; */
+   margin-top: 75px;
    margin-bottom: 10px;
-}
+   margin-left: 50%;
+} 
 
 .chart{
     height: 65vh !important;
     width: 100%;
-    margin-top: 40px;
-    margin-left: 15px;
+    margin-top: 112px;
+    margin-left: 150px;
 
 }
 .title {
@@ -29,4 +43,7 @@
     margin-top: 40px;
 }
 
+/* .h2 mt-5 {
+    margin-left: 200px;
+} */
 

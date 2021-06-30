@@ -16,20 +16,112 @@ h1{
 .about-section h1{
     font-weight: 900;
     color: chocolate;
-    text-align: center;
+    text-align: left;
 }
 .about-section p{
     font-size: 22px;
-    text-align: center;
+    text-align: start;
+    
 }
 .about-background{
     background: rgb(255,255,255);
 background: linear-gradient(330deg, rgba(255,255,255,1) 63%, rgba(210,105,30,1) 91%, rgba(255,255,255,1) 100%);
 }
-.h-50vh{
+/* .container{
+    border-style: solid;
+} */
+
+ .h-50vh{
     height: 50vh !important;
-}
-.all-cards{
+} 
+/*  .all-cards{
    
-   
+   width: 100%;
+   align-items: center;
+}   */
+
+.AnimalsCategory {
+     /* position: absolute; */
+    display: inline-block;
+    width: 277px;
+    position: relative;
+    /* margin-top: 15px; */
+    /* align-items: center;
+    text-align: center; */
+    /* margin-left: 43px;
+    margin-bottom: 10px; */
+   /*  width: 50%; */
+  }
+  .Pets{
+      margin-top: 15px;
+      font-weight: 900;
+      /* margin-bottom: 15px; */
+      margin-right: 65px;
+      text-align: center;
+      font-size: larger; 
+      color: rgba(210,105,30,1);
+      
+  }
+  .image1 {
+    display: inline-block;
+    /* display: block; */
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    padding: 10px;
+  }
+
+.button{
+    background-color: rgb(255, 254, 227);
+    color: rgba(210,105,30,1);
 }
+  .button:hover{
+      background-color: rgba(210,105,30,1);
+      color: rgb(255, 254, 227);
+  }
+
+  .ToLearn{
+    background-color: rgb(255, 254, 227);
+    color: rgba(210,105,30,1);
+    
+}
+  .ToLearn:hover{
+      background-color: rgba(210,105,30,1);
+      color: rgb(255, 254, 227);
+      
+  }
+  .overlay1 {
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    padding: 10px; 
+    
+
+  }
+  
+  .AnimalsCategory:hover .overlay1 {
+    opacity: 1;
+  }
+  .AnimalsCategory:hover .image1{
+    opacity: .2;
+    
+  }
+  
+   .text1 {
+    color: white;
+    font-size: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(50%, 50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  } 

@@ -1,10 +1,16 @@
 import React from 'react';
-import { Container, Col, Nav, Row, NavDropdown } from 'react-bootstrap';
+import { Container, Nav, Navbar, Row, Col, NavDropdown } from 'react-bootstrap';
 import './Header.css';
 import { withAuth0 } from '@auth0/auth0-react';
 import Login from './Login';
 import Logout from './Logout';
 
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+} from 'react-router-dom';
 export class Header extends React.Component {
   render() {
 

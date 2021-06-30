@@ -1,7 +1,8 @@
 .header-color{
 	background-color: transparent;
 	width: 100%;
-	z-index: 100;
+	height: 70px;
+	z-index: 999;
 	position: fixed;
 	padding :10px 0;
 	top:0;
@@ -13,13 +14,8 @@
 }
 .position {
 	position: absolute;
-	
 	top:0px;
 	left: 200px;
-	
-
-	
-
 }
 
 .font-color{
@@ -36,5 +32,4 @@
 }
 .bg-color {
 	  color: red;
-	  
 }
