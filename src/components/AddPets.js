@@ -3,11 +3,10 @@ import React from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-
-
 import axios from 'axios';
 import UpdateForm from './UpdateForm';
 import './AddPets.css';
+import { withAuth0 } from '@auth0/auth0-react';
 
 export class AddPets extends React.Component {
   constructor(props) {
@@ -44,7 +43,6 @@ export class AddPets extends React.Component {
     });
     console.log('1',this.state.files);
   }
-
 	breed = (breed) => this.setState({ breed });
 	age = (age) => this.setState({ age });
 	gender = (gender) => this.setState({ gender });
@@ -61,13 +59,13 @@ export class AddPets extends React.Component {
 			updateFlies: URL.createObjectURL(e.target.files[0]),
 		});
 	}
-	componentDidMount = () => {
-		axios.get(`${this.state.REACT_APP_SERVER_URL}/pet?email=${this.state.userEmail}`).then((response) => {
-			this.setState({
-				creatData: response.data.pets,
-				NumberPets: response.data.pets.length,
-			});
-		});
+	componentDidMount  = () =>{
+	    axios.get(`${this.state.REACT_APP_SERVER_URL}/pet?email=${this.state.userEmail}`).then((response) => {
+	    this.setState({
+	      creatData: response.data.pets,
+	      NumberPets: response.data.pets.length,
+	    });
+	  });
 	}
 
 	createPets = (e) => {

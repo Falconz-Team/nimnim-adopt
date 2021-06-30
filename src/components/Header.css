@@ -24,9 +24,7 @@
 .text-my-own-color {
 	color: rgb(255, 235, 205) !important; 
 	text-shadow: 1px 1px 1px #ccc0c86c;
-	/* text-shadow: 1px 1px 1px #c7a88e; */
-
-	
+	font-size: 15px;
 }
 
 .text-my-own-color:hover, .text-my-own-color:active {
@@ -34,14 +32,4 @@
 }
 .bg-color {
 	  color: red;
-	  
 }
-
-/* height: 80px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-size: 1.2rem;
-	position: sticky;
-	top: 0;
-	z-index: 999; */

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Row, Col, Button, Modal } from 'react-bootstrap';
 import axios from 'axios';
-import './Cats.css';
+import './ShowPets.css';
 import SelectedPets from './SelectedPets';
 
 
@@ -58,13 +58,13 @@ export class Cats extends Component {
   }
   render() {
     return (
-      <>
+      <div class = 'modelpets'>
         <Row xs={1} md={3} className="g-4" style={{marginTop:'80px'}}>
           {this.state.petData.map((obj, idx) => {
             return (
               <>
                 <div class="cat" >
-                  <img src={obj.image_Url} alt="Avatar" class="image" />
+                  <img src={obj.image_Url} alt="Avatar" class="image" style={{height:'460px'}} />
                   <div class="overlay">
                     <div class="text">{obj.breed}
                       <br></br><Button onClick={() => {
@@ -89,7 +89,7 @@ export class Cats extends Component {
           
           {console.log(this.state.Show)}
           </Row>
-      </>
+      </div>
     );
   }
 }
