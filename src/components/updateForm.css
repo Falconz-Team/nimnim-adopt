@@ -2,7 +2,8 @@
     width: 100%;
 	background-color: #746456;
 	font-family: 'Playfair Display', serif;
-
+	color: #f1f1f1;
+	font-weight: bold;
 }
 
 #form-heading{
@@ -10,6 +11,7 @@
 	background-color: #746456;
 	margin: 0;
 	padding: 10px;
+	text-shadow: 1px 1px 3px rgba(70, 58, 60, 0.575);
 }
 
 .title-update-style{
@@ -19,7 +21,7 @@
     font-weight: bold;
     padding: 20px;
     border-radius: 25px;
-    background-color: #c9aa8c59;
+    background-color: #ccc4b781;
     font-family: 'Kalam', cursive;
 	box-shadow: 1px 1px 1px #c9aa8c59;
 }
@@ -30,25 +32,27 @@
     border-radius: 10px;
     width: 100px;
     text-align: center;
+	color: rgb(83, 69, 72);
 }
 
 
 .btn-gen:hover{
-    background-color: rgb(83, 69, 72);
-    color: f1f1f1;
+    background-color: #5f584d;
+    color: #f1f1f1;
 }
 
-.button-update {
-    color: f1f1f1;
+.button-update{
+    color: rgb(83, 69, 72);
     border-radius: 10px;
     padding: 10px 20px 10px 20px;
-    background-color: #b8ae9e;
+    background-color: #ccc4b7;
     border: #928b7f;
     margin-top: 20px;
     margin-left: 30px;
+	font-weight: bold;
 }
 
 .button-update:hover {
-	background-color: #f1f1f1;
-    color: #5f584d;
+	background-color: #5f584d;
+    color: #ccc4b7;
 }

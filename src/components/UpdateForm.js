@@ -11,16 +11,16 @@ export class UpdateForm extends Component {
 					<div id="form-heading">
 						<p className="title-update-style">Fill the form with the updated information.</p>
 					</div>
-					<Form onSubmit={(e) => this.props.UpdatePet(e)} className="modelForm" bg="dark">
+					<Form onSubmit={(e) => this.props.UpdatePet(e)} className="modelForm">
 						<div className="form-container">
 
 							<Form.Group className="mb-3">
 								<Form.Label>Breed</Form.Label>
-								<Form.Control placeholder="breed" className="input" type="text" onChange={(e) => this.props.updateBreed(e.target.value)} />
+								<Form.Control placeholder="New Breed" className="input" type="text" onChange={(e) => this.props.updateBreed(e.target.value)} />
 							</Form.Group>
 							<Form.Group className="mb-3" >
 								<Form.Label>Age</Form.Label>
-								<Form.Control placeholder="age" className="input" type="text" onChange={(e) => this.props.updateAge(e.target.value)} />
+								<Form.Control placeholder="New Age" className="input" type="text" onChange={(e) => this.props.updateAge(e.target.value)} />
 							</Form.Group>
 							<Form.Group className="mb-3" id="gender">
 								<Form.Label>Gender</Form.Label>
@@ -44,16 +44,16 @@ export class UpdateForm extends Component {
 							<Form.Group className="mb-3" id="Description">
 								<Form.Label>Description</Form.Label>
 
-								<Form.Control placeholder="description" className="input" type="text" onChange={(e) => this.props.updateDescription(e.target.value)} />
+								<Form.Control placeholder="New Description" className="input" type="text" onChange={(e) => this.props.updateDescription(e.target.value)} />
 							</Form.Group>
 							<Form.Group  >
-								<Form.Control style={{ textAlign: 'center' }} className="input" type="file" onChange={this.props.updateHandleChange} />
+								<Form.Control style={{ textAlign: 'center'}} className="input" type="file" onChange={this.props.updateHandleChange}/>
 							</Form.Group>
 							<Form.Group style={{ textAlign: 'center' }}>
-								<button className="button-update" type="submit" >
+								<button className="button-update" type="submit" style={{width: '30%'}}>
 									Update
 								</button>
-								<button onClick={this.props.closeUpdateForm} className="button-update" type="submit">
+								<button onClick={this.props.closeUpdateForm} className="button-update" type="submit" style={{width: '30%'}}>
 									Close
 								</button>
 							</Form.Group>
