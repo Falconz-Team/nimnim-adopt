@@ -1,13 +1,19 @@
 import React from 'react';
-import {  Col, Nav, Row, NavDropdown } from 'react-bootstrap';
+import { Container, Nav, Navbar, Row, Col, NavDropdown } from 'react-bootstrap';
 import './Header.css';
 import { withAuth0 } from '@auth0/auth0-react';
 import Login from './Login';
 import Logout from './Logout';
 
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+} from 'react-router-dom';
 export class Header extends React.Component {
   render() {
- 
+
     const { isAuthenticated } = this.props.auth0;
     return (
       <div class="header-color">
@@ -34,16 +40,19 @@ export class Header extends React.Component {
                 <Nav.Item>
                   <Nav.Link eventKey="AboutUs" href="AboutUs" className="text-my-own-color">ABOUT US</Nav.Link>
                 </Nav.Item>
-                { !isAuthenticated &&
-                  <Nav.Item>
+                <Nav.Item>
+                  {!isAuthenticated &&
+
                     <Login />
-                  </Nav.Item>
-                }
-                {isAuthenticated &&
-                  <Nav.Item>
+                  }
+                </Nav.Item>
+
+                <Nav.Item>
+                  {isAuthenticated &&
                     <Logout />
-                  </Nav.Item>
-                }
+                  }
+                </Nav.Item>
+
 
               </Nav>
             </Col>

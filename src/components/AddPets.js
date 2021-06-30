@@ -7,6 +7,7 @@ import axios from 'axios';
 import UpdateForm from './UpdateForm';
 import './AddPets.css';
 import { withAuth0 } from '@auth0/auth0-react';
+
 import LoginPlz from './LoginPlz';
 
 export class AddPets extends React.Component {
@@ -49,15 +50,10 @@ export class AddPets extends React.Component {
 		console.log('1', this.state.files);
 	}
 
-
-
 	breed = (breed) => this.setState({ breed });
 	age = (age) => this.setState({ age });
 	gender = (gender) => this.setState({ gender });
 	description = (description) => this.setState({ description });
-
-
-
 
 	updateBreed = (updateBreed) => this.setState({ updateBreed });
 	updateAge = (updateAge) => this.setState({ updateAge });
@@ -70,8 +66,8 @@ export class AddPets extends React.Component {
 			updateFlies: URL.createObjectURL(e.target.files[0]),
 		});
 	}
-	componentDidMount = () => {
 
+	componentDidMount = () => {
 		axios.get(`${this.state.REACT_APP_SERVER_URL}/pet?email=${this.state.userEmail}`).then((response) => {
 			this.setState({
 				creatData: response.data.pets,
@@ -104,7 +100,6 @@ export class AddPets extends React.Component {
 	}
 
 	deletePet = (indx) => {
-
 		axios.delete(`${this.state.REACT_APP_SERVER_URL}/pet/${indx}?email=${this.state.userEmail}`).then((response) => {
 			console.log('backdata', response);
 			this.setState({
@@ -118,7 +113,6 @@ export class AddPets extends React.Component {
 	}
 
 	UpdatePet = (e) => {
-
 		e.preventDefault();
 		const reqBody = {
 			email: this.state.userEmail,
@@ -142,8 +136,7 @@ export class AddPets extends React.Component {
 		);
 
 	}
-
-
+	
 	openUpdateForm = (indx) => {
 		this.setState({
 			showForm: true,

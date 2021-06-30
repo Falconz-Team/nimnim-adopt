@@ -44,9 +44,11 @@ export class SelectedPets extends Component {
                                 <h4>Age: {this.props.Age}</h4>
                                 <br></br>
                             </div>
-                            <div style={{ backgroundColor: 'rgba(280, 233, 300, 0.999)', textAlign: 'center', padding: '5px' }}>
+                            <div style={{ textAlign: 'left', padding: '5px' }}>
                                 <p><strong>{this.props.description}</strong></p>
+                                
                             </div>
+                            
                             {isAuthenticated &&
                                 <div style={{ marginTop: '20px', marginLeft: '200px' }}>
                                     <Button onClick={() => this.adopt()}>Adopt Now</Button>
@@ -57,11 +59,11 @@ export class SelectedPets extends Component {
                                     <Button onClick={() => this.adoptPlz()} >Adopt Now</Button>
                                 </div>
                             }
-
-                        </div>
-                        {this.state.canAdopt &&
-                            <p>Thank you. we are so grateful for the pleasure of serving you and hope we met your expectations, we will contact you soon, have a wonderful day.</p>
+                            {this.state.canAdopt &&
+                            <p style={{marginTop:'10px', backgroundColor: 'rgba(280, 233, 300, 0.999)',  padding: '5px'  }}><strong>Thank you. we are so grateful for the pleasure of serving you and hope we met your expectations, we will contact you soon, have a wonderful day.</strong></p>
                         }
+                        </div>
+                        
                         {this.state.signIn &&
                             <LoginPlz />
                         }
