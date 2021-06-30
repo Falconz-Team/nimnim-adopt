@@ -9,7 +9,7 @@ export class UpdateForm extends Component {
 			<div id="div">
 				<Modal show={true}>
 					<div id="form-heading">
-						<p className="title-update-style">Fill the form with the updated information</p>
+						<p className="title-update-style">Fill the form with the updated information.</p>
 					</div>
 					<Form onSubmit={(e) => this.props.UpdatePet(e)} className="modelForm" bg="dark">
 						<div className="form-container">
