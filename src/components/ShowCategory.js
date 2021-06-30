@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Show-catogety.css';
-import {Card, Button} from 'react-bootstrap';
-import Cats from './Cats';
 import {
   BrowserRouter as Router,
   Switch,
@@ -18,7 +16,6 @@ export class ShowCategory extends Component {
         <div className='dog-header'>
         </div>
 
-        
         <div className='about-section about-background'>
           <div className='container'>
 
@@ -48,103 +45,72 @@ export class ShowCategory extends Component {
               <div className='col mb-5'>
                 {/* <Button class="ToLearn" variant="info"href="/CarePage">To learn more </Button> */}
                 <Link to="/CarePage">
-                    <button class="ToLearn" type="button">To learn more</button>
-                    </Link>
+                  <button class="to-learn" type="button">To learn more</button>
+                </Link>
               </div>
             </div>
 
             <>
-        <div class="Pets" >
-          <h2>Pets Category</h2>
-        </div>
-        <br></br>
-                <div class="AnimalsCategory">
-                
-                  <img src="https://images.unsplash.com/photo-1596710104472-32ce1fb38f8c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80" alt="Avatar" class="image1" />
-                  
-                  <div class="overlay1">
-                    <div class="text1">{}
-                    <Link to="/Cats">
-                    <button class="button" type="button">Show Cats</button>
-                    </Link>
-                    </div>
-                  </div>
-                </div>
-              </>
-
-              <>
-                <div class="AnimalsCategory">
-                  <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Avatar" class="image1" />
-                  <div class="overlay1">
-                    <div class="text1">{}
-                    <Link to="/Dogs">
-                    <button class="button" type="button">Show Dogs</button>
-                    </Link>
-                    </div>
-                  </div>
-                </div>
-              </>
-
-              <>
-                <div class="AnimalsCategory">
-                  <img src="https://images.unsplash.com/photo-1480044965905-02098d419e96?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="Avatar" class="image1" />
-                  <div class="overlay1">
-                    <div class="text1">{}
-                    <Link to="/Birds">
-                    <button class="button" type="button">Show Birds</button>
-                    </Link>
-                    </div>
-                  </div>
-                </div>
-              </>
-
-              <>
-                <div class="AnimalsCategory">
-                  <img src="https://images.unsplash.com/photo-1425082661705-1834bfd09dca?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=755&q=80" alt="Avatar" class="image1" />
-                  <div class="overlay1">
-                    <div class="text1">{}
-                    <Link to="/Other">
-                    <button class="button" type="button">Show Other</button>
-                    </Link>
-                    </div>
-                  </div>
-                </div>
-              </>
+              <div class="Pets" >
+                <h2>Pets Category</h2>
+              </div>
               <br></br>
+              <div class="AnimalsCategory">
 
-      {/*       <div className='row row-cols-4 '>
-              <div className='col'><Card style={{ width: '15rem' }}>
-                <Card.Img variant="top" src="https://images.unsplash.com/photo-1596710104472-32ce1fb38f8c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80" />
-                <Card.Body>
-                 
-                  <Button variant="info" href="/cats">CATS</Button>
-                </Card.Body>
-              </Card></div>
-              <div className='col'><Card style={{ width: '15rem' }}>
-                <Card.Img variant="top" src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" />
-                <Card.Body>
-                 
-                  <Button variant="info" href="/Dogs">DOGS</Button>
-                </Card.Body>
-              </Card></div>
-              <div className='col'><Card style={{ width: '15rem' }}>
-                <Card.Img variant="top" src="https://images.unsplash.com/photo-1480044965905-02098d419e96?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" />
-                <Card.Body>
-                  
-                  <Button variant="info" href="/Birds">BIRDS</Button>
-                </Card.Body>
-              </Card></div>
-              <div className='col'><Card style={{ width: '15rem' }}>
-                <Card.Img variant="top" src="https://images.unsplash.com/photo-1425082661705-1834bfd09dca?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=755&q=80" />
-                <Card.Body>
-                 
-                  <Button variant="info" href="/Other">OTHER</Button>
-                </Card.Body>
-              </Card></div> */}
-            </div>
+                <img src="https://images.unsplash.com/photo-1596710104472-32ce1fb38f8c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80" alt="Avatar" class="image1" />
+
+                <div class="overlay1">
+                  <div class="text1">{ }
+                    <Link to="/Cats">
+                      <button class="button" type="button">Cats</button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </>
+
+            <>
+              <div class="AnimalsCategory">
+                <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Avatar" class="image1" />
+                <div class="overlay1">
+                  <div class="text1">{ }
+                    <Link to="/Dogs">
+                      <button class="button" type="button">Dogs</button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </>
+
+            <>
+              <div class="AnimalsCategory">
+                <img src="https://images.unsplash.com/photo-1480044965905-02098d419e96?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="Avatar" class="image1" />
+                <div class="overlay1">
+                  <div class="text1">{ }
+                    <Link to="/Birds">
+                      <button class="button" type="button">Birds</button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </>
+
+            <>
+              <div class="AnimalsCategory">
+                <img src="https://images.unsplash.com/photo-1425082661705-1834bfd09dca?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=755&q=80" alt="Avatar" class="image1" />
+                <div class="overlay1">
+                  <div class="text1">{ }
+                    <Link to="/Other">
+                      <button class="button" type="button">Other</button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </>
+            <br></br>
           </div>
         </div>
-      /* </div> */
+      </div>
     );
   }
 }
