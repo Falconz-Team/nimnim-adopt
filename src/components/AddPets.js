@@ -185,8 +185,34 @@ export class AddPets extends React.Component {
 							<Form.Control className="input" type="text" onChange={(e) => this.age(e.target.value)} />
 						</Form.Group>
 						<Form.Group className="mb-3">
-							<Form.Label>gender</Form.Label>
-							<Form.Control className="input" type="text" onChange={(e) => this.gender(e.target.value)} />
+						<Form.Label>Gender</Form.Label>
+							
+							<Form.Group className="mb-3"  >
+								{
+									<div className="mb-3" id="check" >
+										
+										<Form.Check className ="check" id="check1" onChange={()=>this.gender('male')}
+											
+											label="Male"
+											name="group1"
+											type={'radio'}
+											
+											
+										/>
+									
+									<Form.Check className ="check" id="check2" onChange={()=>(this.gender('female'))}
+											
+											label="Female"
+											name="group1"
+											type={'radio'}
+											
+											
+										/>
+									
+									</div>
+									
+								}
+							</Form.Group>
 						</Form.Group>
 						<Form.Group className="mb-3">
 							<Form.Label>description</Form.Label>
@@ -197,14 +223,14 @@ export class AddPets extends React.Component {
 						</Form.Group>
 						<Form.Group style={{ textAlign: 'right', marginRight: '168px' }}>
 							{isAuthenticated &&
-								<Button onClick={() => this.isLogin()} type="submit" style={{ marginTop: '-95px', color: 'black', backgroundColor: 'navajowhite' }}>
+								<button className="buttonForm" onClick={() => this.isLogin()} type="submit" style={{ marginTop: '-95px', color: 'black', backgroundColor: 'navajowhite' }}>
 									AddPets
-								</Button>
+								</button>
 							}
-							{!isAuthenticated &&
-								<Button onClick={() => this.isLogout()} type="submit" style={{ marginTop: '-95px', color: 'black', backgroundColor: 'navajowhite' }}>
+							{!isAuthenticated  &&
+								<button className="buttonForm" onClick={() => this.isLogout()} type="submit" style={{ marginTop: '-95px', color: 'black', backgroundColor: 'navajowhite' }}>
 									AddPets
-								</Button>
+								</button>
 							}
 
 						</Form.Group>
