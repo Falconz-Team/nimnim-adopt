@@ -1,3 +1,5 @@
+'use sreict';
+
 import React from 'react';
 import { Carousel, Image } from 'react-bootstrap';
 import MainButtons from './MainButtons';
@@ -23,17 +25,17 @@ export class Main extends React.Component {
           </Carousel.Item>
         </Carousel >
         <div class="row" className="disc">
-           <div class="col-sm" style={{margin: 0, padding: 0, top: 0}}>
-             <div>
-               <h1 className='font-family'>Nimnim</h1>
-               <p className="for-adoption-position">For Adoption</p>
-               <p className="margin-top">"Find Me A Home, Find Me A Family"</p>
-             </div>
-             <div>
-               <MainButtons />
-             </div>
-           </div>
-         </div>
+          <div class="col-sm" style={{ margin: 0, padding: 0, top: 0 }}>
+            <div>
+              <h1 className='font-family'>Nimnim</h1>
+              <p className="for-adoption-position">For Adoption</p>
+              <p className="margin-top">"Find Me A Home, Find Me A Family"</p>
+            </div>
+            <div>
+              <MainButtons />
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

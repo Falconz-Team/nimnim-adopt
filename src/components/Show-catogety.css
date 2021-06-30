@@ -80,12 +80,12 @@ background: linear-gradient(330deg, rgba(255,255,255,1) 63%, rgba(210,105,30,1) 
       color: rgb(255, 254, 227);
   }
 
-  .ToLearn{
+  .to-learn{
     background-color: rgb(255, 254, 227);
     color: rgba(210,105,30,1);
     
 }
-  .ToLearn:hover{
+  .to-learn:hover{
       background-color: rgba(210,105,30,1);
       color: rgb(255, 254, 227);
       
