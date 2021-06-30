@@ -36,7 +36,7 @@ export class SelectedPets extends Component {
                     </Modal.Header>
                     <Modal.Body style={{ display: 'grid', gridTemplateColumns: '50% 50%' }}>
                         <Card >
-                            <img src={this.props.Image_Url} alt="image" style={{ height: '460px' }} s />
+                            <img src={this.props.Image_Url} alt="image" style={{ height: '460px' }} />
                         </Card>
                         <div style={{ marginLeft: '30px', marginTop: '50px' }}>
                             <div>

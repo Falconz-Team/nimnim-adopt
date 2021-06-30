@@ -6,7 +6,7 @@ const LogoutButton = () => {
 
   return (
     <button style={{backgroundColor: "transparent", border: 0, color: 'rgb(255, 235, 205)',
-    textShadow: '#ccc0c86c', fontSize:'17px', marginTop:'4px'}} onClick={() => logout({ returnTo: window.location.origin })}>
+    textShadow: '#ccc0c86c', fontSize:'17px', marginTop:'4px', fontWeight: 'bold'}} onClick={() => logout({ returnTo: window.location.origin })}>
       Log Out
     </button>
   );

@@ -1,3 +1,4 @@
+// import React, { Component } from 'react';
 import React from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -222,12 +223,12 @@ export class AddPets extends React.Component {
 						</Form.Group>
 						<Form.Group style={{ textAlign: 'center' }}>
 							{isAuthenticated &&
-								<button className="buttonForm" onClick={() => this.isLogin()} type="submit">
+								<button className="buttonForm" onClick={() => this.isLogin()} type="submit" >
 									AddPets
 								</button>
 							}
 							{!isAuthenticated  &&
-								<button className="buttonForm" onClick={() => this.isLogout()} type="submit" >
+								<button className="buttonForm" onClick={() => this.isLogout()} type="submit">
 									AddPets
 								</button>
 							}
@@ -246,7 +247,7 @@ export class AddPets extends React.Component {
 
 									<Card.Img variant="top" src={value.image_Url} style={{ height: '150px' }} />
 									<Card.Body className="cardBody">
-										<Card.Title>Breed: {value.breed}</Card.Title>
+										<Card.Text>Breed: {value.breed}</Card.Text>
 										<Card.Text>
 											Age: {value.age}
 										</Card.Text>
@@ -291,3 +292,4 @@ export class AddPets extends React.Component {
 }
 
 export default withAuth0(AddPets);
+

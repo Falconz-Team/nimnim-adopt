@@ -50,10 +50,10 @@ export class UpdateForm extends Component {
 								<Form.Control style={{ textAlign: 'center'}} className="input" type="file" onChange={this.props.updateHandleChange}/>
 							</Form.Group>
 							<Form.Group style={{ textAlign: 'center' }}>
-								<button className="button-update" type="submit" style={{width: '30%'}}>
+								<button className="button-update" type="submit" style={{width: '30%', marginRight: '5%'}}>
 									Update
 								</button>
-								<button onClick={this.props.closeUpdateForm} className="button-update" type="submit" style={{width: '30%'}}>
+								<button onClick={this.props.closeUpdateForm} className="button-update" type="submit" style={{width: '30%' , marginLeft: '5%'}}>
 									Close
 								</button>
 							</Form.Group>
