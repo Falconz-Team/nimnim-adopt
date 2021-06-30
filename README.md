@@ -38,16 +38,16 @@ We created an organization and a repo within it on github to save our code and a
 
 ## Wireframe
 
-<img src="assest/homepage.png" alt="home">
-<img src="assest/CATIGORIES.png" alt="category">
-<img src="assest/SHOW PETS.png" alt="show pets">
-<img src="assest/pet description.png" alt="pet">
-<img src="assest/ADD PETS.png" alt="Add">
-<img src="assest/care page.png" alt="care">
-<img src="assest/ubout us.png" alt="About">
+<img src="src/assest/homepage.png" alt="home">
+<img src="src/assest/CATIGORIES.png" alt="category">
+<img src="src/assest/SHOW PETS.png" alt="show pets">
+<img src="src/assest/pet description.png" alt="pet">
+<img src="src/assest/ADD PETS.png" alt="Add">
+<img src="src/assest/care page.png" alt="care">
+<img src="src/assest/ubout us.png" alt="About">
 
 ## DataBase Diagram
 
-<img src="assest/diagram.png" alt="Schema">
+<img src="src/assest/diagram.png" alt="Schema">
 
 
