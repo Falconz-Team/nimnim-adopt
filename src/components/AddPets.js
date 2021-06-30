@@ -8,46 +8,53 @@ import UpdateForm from './UpdateForm';
 import './AddPets.css';
 import { withAuth0 } from '@auth0/auth0-react';
 
-export class AddPets extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      breed: '',
-      age: '',
-      gender: '',
-      description: '',
-      image_Url: '',
-	  updateBreed: '',
-      updateAge: '',
-      updateGender: '',
-      updateDescription: '',
-      updateImage_Url: '',
-      creatData: '',
-      userEmail: 'aburadwansaleh@gmail.com',
-      serverUrl: process.env.REACT_APP_SERVER_URL,
-      NumberPets: 0,
-	  updateIndx :'',
-	  showForm: false,
-	  files: null,
-	  updateFlies: null,
-    };
-    this.handleChange = this.handleChange.bind(this);
-    this.updateHandleChange = this.updateHandleChange.bind(this);
-   
-  }
-  handleChange(event) {
+import LoginPlz from './LoginPlz';
 
-    this.setState({
-      files:  URL.createObjectURL(event.target.files[0]),
-	  
-    });
-    console.log('1',this.state.files);
-  }
+export class AddPets extends React.Component {
+
+	constructor(props) {
+		super(props);
+		this.state = {
+			breed: '',
+			age: '',
+			gender: '',
+			description: '',
+			image_Url: '',
+			updateBreed: '',
+			updateAge: '',
+			updateGender: '',
+			updateDescription: '',
+			updateImage_Url: '',
+			creatData: '',
+			userEmail: 'mohammad@k.com',
+			REACT_APP_SERVER_URL: process.env.REACT_APP_SERVER_URL,
+			NumberPets: 0,
+			updateIndx: '',
+			showForm: false,
+			files: null,
+			updateFlies: null,
+			plzLog : false
+
+		};
+		this.handleChange = this.handleChange.bind(this);
+		this.updateHandleChange = this.updateHandleChange.bind(this);
+
+	}
+
+	handleChange(event) {
+
+		this.setState({
+			files: URL.createObjectURL(event.target.files[0]),
+
+		});
+		console.log('1', this.state.files);
+	}
+
 	breed = (breed) => this.setState({ breed });
 	age = (age) => this.setState({ age });
 	gender = (gender) => this.setState({ gender });
 	description = (description) => this.setState({ description });
-  
+
 	updateBreed = (updateBreed) => this.setState({ updateBreed });
 	updateAge = (updateAge) => this.setState({ updateAge });
 	updateGender = (updateGender) => this.setState({ updateGender });
@@ -59,13 +66,14 @@ export class AddPets extends React.Component {
 			updateFlies: URL.createObjectURL(e.target.files[0]),
 		});
 	}
-	componentDidMount  = () =>{
-	    axios.get(`${this.state.REACT_APP_SERVER_URL}/pet?email=${this.state.userEmail}`).then((response) => {
-	    this.setState({
-	      creatData: response.data.pets,
-	      NumberPets: response.data.pets.length,
-	    });
-	  });
+
+	componentDidMount = () => {
+		axios.get(`${this.state.REACT_APP_SERVER_URL}/pet?email=${this.state.userEmail}`).then((response) => {
+			this.setState({
+				creatData: response.data.pets,
+				NumberPets: response.data.pets.length,
+			});
+		});
 	}
 
 	createPets = (e) => {
@@ -140,60 +148,67 @@ export class AddPets extends React.Component {
 			showForm: false,
 		});
 	}
+
+	isLogin = () => {
+
+		this.setState({
+		
+			userEmail: this.props.auth0.user.email,
+		})
+		console.log('userEmailLogin', this.state.userEmail);
+	}
+
+	isLogout = () => {
+		this.setState({
+			plzLog : true,
+			userEmail: 'mohammad@k.com'
+		})
+		console.log('userEmailLogout ', this.state.userEmail);
+	}
+
+
 	render() {
+		console.log('apps', this.props);
+		const { isAuthenticated } = this.props.auth0;
+
 		return (
 			<><div id={'body'}>
 				<div id="AddForm">
-					<p id="p">Fill the form with the proper information and submit your offer, your request will be responded soon.
-
-</p>
-					<Form onSubmit={(e) => this.createPets(e)} className="form-style">
+					<p style={{ textAlign: 'left' }}>Submit your request and we will respond as soon as possible</p>
+					<Form onSubmit={(e) => this.createPets(e)}>
 						<Form.Group className="mb-3">
-							<Form.Label>Breed</Form.Label>
-							<Form.Control placeholder="breed" className="input" type="text" onChange={(e) => this.breed(e.target.value)} />
+							<Form.Label>breed</Form.Label>
+							<Form.Control className="input" type="text" onChange={(e) => this.breed(e.target.value)} />
 						</Form.Group>
 						<Form.Group className="mb-3" >
-							<Form.Label>Age</Form.Label>
-							<Form.Control placeholder="age" className="input" type="text" onChange={(e) => this.age(e.target.value)} />
+							<Form.Label>age</Form.Label>
+							<Form.Control className="input" type="text" onChange={(e) => this.age(e.target.value)} />
 						</Form.Group>
-						<Form.Group className="mb-3" id="gender">
-							<Form.Label>Gender</Form.Label>
-							
-							<Form.Group className="mb-3">
-								{
-									<div className="mb-3" id="check">
-										
-										<Form.Check className ="check" id="check1" onChange={()=>this.gender('Male')}
-											
-											label="Male"
-											name="group1"
-											type={'radio'}
-											
-										/>
-									
-									<Form.Check className ="check" id="check2" onChange={()=>(this.gender('Female'))}
-											
-											label="Female"
-											name="group1"
-											type={'radio'}
-										/>
-									</div>
-								}
-							</Form.Group>
+						<Form.Group className="mb-3">
+							<Form.Label>gender</Form.Label>
+							<Form.Control className="input" type="text" onChange={(e) => this.gender(e.target.value)} />
 						</Form.Group>
-						<Form.Group className="mb-3" id="Description">
-							<Form.Label>Description</Form.Label>
-							
-							<Form.Control placeholder="description" className="input" type="text" onChange={(e) => this.description(e.target.value)} />
+						<Form.Group className="mb-3">
+							<Form.Label>description</Form.Label>
+							<Form.Control className="input" type="text" onChange={(e) => this.description(e.target.value)} />
 						</Form.Group>
 						<Form.Group  >
-							<Form.Control style={{ textAlign:'center' }} className="input" type="file" onChange={this.handleChange} />
+							<Form.Control style={{ marginLeft: '20px' }} className="input" type="file" onChange={this.handleChange} />
 						</Form.Group>
-						<Form.Group style={{ textAlign: 'center'}}>
-							<button className="buttonForm" type="submit" >
-								AddPets
-							</button>
+						<Form.Group style={{ textAlign: 'right', marginRight: '168px' }}>
+							{isAuthenticated &&
+								<Button onClick={() => this.isLogin()} type="submit" style={{ marginTop: '-95px', color: 'black', backgroundColor: 'navajowhite' }}>
+									AddPets
+								</Button>
+							}
+							{!isAuthenticated &&
+								<Button onClick={() => this.isLogout()} type="submit" style={{ marginTop: '-95px', color: 'black', backgroundColor: 'navajowhite' }}>
+									AddPets
+								</Button>
+							}
+
 						</Form.Group>
+
 					</Form>
 
 				</div>
@@ -202,28 +217,32 @@ export class AddPets extends React.Component {
 						{
 							this.state.NumberPets > 0 &&
 							this.state.creatData.map((value, indx) => {
-								return <Card className="cardDesign" style={{ width: '18rem'}}>
+								return <Card style={{ width: '14rem' }}>
 
-									<Card.Img variant="top" src={value.image_Url} style={{height: '150px'}} />
+									<Card.Img variant="top" src={value.image_Url} style={{ height: '150px' }} />
 									<Card.Body className="cardBody">
-										<Card.Text>Breed : {value.breed}</Card.Text>
+										<Card.Title>breed :{value.breed}</Card.Title>
 										<Card.Text>
-											Age : {value.age}
+											age: {value.age}
 										</Card.Text>
 										<Card.Text>
-											Gender :  {value.gender}
+											gender:  {value.gender}
 										</Card.Text>
 										<Card.Text>
-											Description : {value.description}
+											description : {value.description}
 										</Card.Text>
-										<button className="buttonForm"  variant="primary" onClick={() => this.deletePet(indx)}>Delete</button>
-										<button className="buttonUpdate"  variant="secondary" onClick={() => this.openUpdateForm(indx)}>Update</button>
+										<Button variant="primary" onClick={() => this.deletePet(indx)}>delete</Button>
+										<Button variant="secondary" onClick={() => this.openUpdateForm(indx)}>Update</Button>
 									</Card.Body>
 								</Card>;
 							})
+
 						}
 					</div>
 					<div>
+
+
+
 						{this.state.showForm &&
 							<UpdateForm
 								closeUpdateForm={this.closeUpdateForm}
@@ -238,9 +257,12 @@ export class AddPets extends React.Component {
 					</div>
 				</div>
 			</div>
+			{this.state.plzLog &&
+                            <LoginPlz />
+                        }
 			</>
 		);
 	}
 }
 
-export default AddPets;
+export default withAuth0(AddPets);
