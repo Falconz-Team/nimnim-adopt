@@ -1,3 +1,4 @@
+// import React, { Component } from 'react';
 import React from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -173,15 +174,15 @@ export class AddPets extends React.Component {
 		return (
 			<><div id={'body'}>
 				<div id="AddForm">
-					<p style={{ textAlign: 'left' }}>Submit your request and we will respond as soon as possible</p>
+					<p style={{ textAlign: 'left' }} id="p">Fill the form with the proper information and submit your offer, your request will be responded soon.</p>
 					<Form onSubmit={(e) => this.createPets(e)}>
 						<Form.Group className="mb-3">
-							<Form.Label>breed</Form.Label>
-							<Form.Control className="input" type="text" onChange={(e) => this.breed(e.target.value)} />
+							<Form.Label>Breed</Form.Label>
+							<Form.Control className="input" type="text" onChange={(e) => this.breed(e.target.value)} placeholder="Breed"/>
 						</Form.Group>
 						<Form.Group className="mb-3" >
-							<Form.Label>age</Form.Label>
-							<Form.Control className="input" type="text" onChange={(e) => this.age(e.target.value)} />
+							<Form.Label>Age</Form.Label>
+							<Form.Control className="input" type="text" onChange={(e) => this.age(e.target.value)} placeholder="Age"/>
 						</Form.Group>
 						<Form.Group className="mb-3">
 						<Form.Label>Gender</Form.Label>
@@ -190,7 +191,7 @@ export class AddPets extends React.Component {
 								{
 									<div className="mb-3" id="check" >
 										
-										<Form.Check className ="check" id="check1" onChange={()=>this.gender('male')}
+										<Form.Check className ="check" id="check1" onChange={()=>this.gender('Male')}
 											
 											label="Male"
 											name="group1"
@@ -199,7 +200,7 @@ export class AddPets extends React.Component {
 											
 										/>
 									
-									<Form.Check className ="check" id="check2" onChange={()=>(this.gender('female'))}
+									<Form.Check className ="check" id="check2" onChange={()=>(this.gender('Female'))}
 											
 											label="Female"
 											name="group1"
@@ -214,20 +215,20 @@ export class AddPets extends React.Component {
 							</Form.Group>
 						</Form.Group>
 						<Form.Group className="mb-3">
-							<Form.Label>description</Form.Label>
-							<Form.Control className="input" type="text" onChange={(e) => this.description(e.target.value)} />
+							<Form.Label>Description</Form.Label>
+							<Form.Control className="input" type="text" onChange={(e) => this.description(e.target.value)} placeholder="Description"/>
 						</Form.Group>
 						<Form.Group  >
-							<Form.Control style={{ marginLeft: '20px' }} className="input" type="file" onChange={this.handleChange} />
+							<Form.Control style={{ marginLeft: '20%' }} className="input" type="file" onChange={this.handleChange} />
 						</Form.Group>
-						<Form.Group style={{ textAlign: 'right', marginRight: '168px' }}>
+						<Form.Group style={{ textAlign: 'center' }}>
 							{isAuthenticated &&
-								<button className="buttonForm" onClick={() => this.isLogin()} type="submit" style={{ marginTop: '-95px', color: 'black', backgroundColor: 'navajowhite' }}>
+								<button className="buttonForm" onClick={() => this.isLogin()} type="submit" >
 									AddPets
 								</button>
 							}
 							{!isAuthenticated  &&
-								<button className="buttonForm" onClick={() => this.isLogout()} type="submit" style={{ marginTop: '-95px', color: 'black', backgroundColor: 'navajowhite' }}>
+								<button className="buttonForm" onClick={() => this.isLogout()} type="submit">
 									AddPets
 								</button>
 							}
@@ -242,22 +243,22 @@ export class AddPets extends React.Component {
 						{
 							this.state.NumberPets > 0 &&
 							this.state.creatData.map((value, indx) => {
-								return <Card style={{ width: '14rem' }}>
+								return <Card style={{ width: '17rem' }}>
 
 									<Card.Img variant="top" src={value.image_Url} style={{ height: '150px' }} />
 									<Card.Body className="cardBody">
-										<Card.Title>breed :{value.breed}</Card.Title>
+										<Card.Text>Breed: {value.breed}</Card.Text>
 										<Card.Text>
-											age: {value.age}
+											Age: {value.age}
 										</Card.Text>
 										<Card.Text>
-											gender:  {value.gender}
+											Gender:  {value.gender}
 										</Card.Text>
 										<Card.Text>
-											description : {value.description}
+											Description: {value.description}
 										</Card.Text>
-										<Button variant="primary" onClick={() => this.deletePet(indx)}>delete</Button>
-										<Button variant="secondary" onClick={() => this.openUpdateForm(indx)}>Update</Button>
+										<button variant="primary" onClick={() => this.deletePet(indx)} id="del-btn">Delete</button>
+										<button variant="secondary" onClick={() => this.openUpdateForm(indx)} id="up-btn">Update</button>
 									</Card.Body>
 								</Card>;
 							})
@@ -291,3 +292,4 @@ export class AddPets extends React.Component {
 }
 
 export default withAuth0(AddPets);
+

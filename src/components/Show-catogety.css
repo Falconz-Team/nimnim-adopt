@@ -72,25 +72,41 @@ background: linear-gradient(330deg, rgba(255,255,255,1) 63%, rgba(210,105,30,1) 
   }
 
 .button{
-    background-color: rgb(255, 254, 227);
-    color: rgba(210,105,30,1);
+	color: rgb(255, 254, 227);
+    border-radius: 10px;
+    padding: 10px 20px 10px 20px;
+    background-color: #b8ae9e;
+    border: #928b7f;
+    margin-top: 20px;
+    margin-left: 30px;
+	font-family: 'Playfair Display', serif;
+	font-weight: bold;
+	font-size: 15px;
 }
-  .button:hover{
+.button:hover{
       background-color: rgba(210,105,30,1);
       color: rgb(255, 254, 227);
-  }
-
-  .to-learn{
-    background-color: rgb(255, 254, 227);
-    color: rgba(210,105,30,1);
-    
 }
-  .to-learn:hover{
+
+.to-learn{
+	color: rgba(210,105,30,1);
+    border-radius: 10px;
+    padding: 10px 20px 10px 20px;
+    background-color: #b8ae9e;
+    border: #928b7f;
+    margin-top: 20px;
+    margin-left: 30px;
+    width: 100%;
+	font-family: 'Playfair Display', serif;
+	font-weight: bold;
+	font-size: 15px;
+}
+.to-learn:hover{
       background-color: rgba(210,105,30,1);
       color: rgb(255, 254, 227);
       
-  }
-  .overlay1 {
+}
+.overlay1 {
     position: absolute;
     display: block;
     top: 0;
@@ -104,17 +120,17 @@ background: linear-gradient(330deg, rgba(255,255,255,1) 63%, rgba(210,105,30,1) 
     padding: 10px; 
     
 
-  }
+}
   
-  .AnimalsCategory:hover .overlay1 {
+.AnimalsCategory:hover .overlay1 {
     opacity: 1;
-  }
-  .AnimalsCategory:hover .image1{
+}
+.AnimalsCategory:hover .image1{
     opacity: .2;
     
-  }
+}
   
-   .text1 {
+.text1 {
     color: white;
     font-size: 25px;
     position: absolute;
@@ -124,4 +140,4 @@ background: linear-gradient(330deg, rgba(255,255,255,1) 63%, rgba(210,105,30,1) 
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     text-align: center;
-  } 
+} 
