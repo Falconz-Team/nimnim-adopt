@@ -29,7 +29,7 @@ export class Main extends React.Component {
             <div>
               <h1 className='font-family'>Nimnim</h1>
               <p className="for-adoption-position">For Adoption</p>
-              <p className="margin-top">"Find Me A Home, Find Me A Family"</p>
+              <p id="margin-top">"Find Me A Home, Find Me A Family"</p>
             </div>
             <div>
               <MainButtons />

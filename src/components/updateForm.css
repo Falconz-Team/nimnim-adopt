@@ -2,7 +2,8 @@
     width: 100%;
 	background-color: #746456;
 	font-family: 'Playfair Display', serif;
-
+	color: #f1f1f1;
+	font-weight: bold;
 }
 
 #form-heading{
@@ -10,6 +11,8 @@
 	background-color: #746456;
 	margin: 0;
 	padding: 10px;
+	text-shadow: 1px 1px 3px rgba(70, 58, 60, 0.575);
+	background-image: url('https://assets.stickpng.com/thumbs/58aeffa2c869e092af51ee72.png');
 }
 
 .title-update-style{
@@ -19,36 +22,43 @@
     font-weight: bold;
     padding: 20px;
     border-radius: 25px;
-    background-color: #c9aa8c59;
+    background-color: #ccc4b781;
     font-family: 'Kalam', cursive;
-	box-shadow: 1px 1px 1px #c9aa8c59;
+	box-shadow: 2px 2px 5px 5px #f1f1f15e;
 }
 
 .btn-gen {
     background-color: rgb(250, 250, 250);
     padding: 0px 0px 0px 10px;
     border-radius: 10px;
-    width: 100px;
+    width: 95px;
     text-align: center;
+	color: rgb(83, 69, 72);
+	margin-left: 1%;
 }
 
 
 .btn-gen:hover{
-    background-color: rgb(83, 69, 72);
-    color: f1f1f1;
+    background-color: #5f584d;
+    color: #f1f1f1;
 }
 
-.button-update {
-    color: f1f1f1;
+.button-update{
+    color: rgb(83, 69, 72);
     border-radius: 10px;
     padding: 10px 20px 10px 20px;
-    background-color: #b8ae9e;
+    background-color: #ccc4b7;
     border: #928b7f;
     margin-top: 20px;
-    margin-left: 30px;
+    margin-left: 10px;
+	font-weight: bold;
 }
 
 .button-update:hover {
-	background-color: #f1f1f1;
-    color: #5f584d;
+	background-color: #5f584d;
+    color: #ccc4b7;
+}
+
+.form-container{
+	margin-left: 5%;
 }

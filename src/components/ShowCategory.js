@@ -45,14 +45,14 @@ export class ShowCategory extends Component {
               <div className='col mb-5'>
                 {/* <Button class="ToLearn" variant="info"href="/CarePage">To learn more </Button> */}
                 <Link to="/CarePage">
-                  <button class="to-learn" type="button">To learn more</button>
+                  <button class="to-learn" type="button">To Learn More</button>
                 </Link>
               </div>
             </div>
 
             <>
-              <div class="Pets" >
-                <h2>Pets Category</h2>
+              <div class="Pets">
+                <h2>Pets Categories</h2>
               </div>
               <br></br>
               <div class="AnimalsCategory">
